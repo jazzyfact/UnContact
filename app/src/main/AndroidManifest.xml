@@ -12,8 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QrCodeActivity"></activity>
-        <activity android:name=".map"></activity>
+        <activity android:name=".TravelActivity"></activity>
+        <activity android:name=".RideActivity" />
+        <activity android:name=".StayActivity" />
+        <activity android:name=".GoodsBuyActivity" />
+        <activity android:name=".EattingActivity" />
+        <activity android:name=".QrCodeActivity" />
+        <activity android:name=".map" />
 
         <meta-data
             android:name="com.naver.maps.map.eu6zrbl386"
@@ -26,9 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
     </application>
 
 </manifest>
