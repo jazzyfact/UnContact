@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button btBuying;
-    TextView btTravel, btRecommendation;
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,27 +56,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        btRecommendation = findViewById(R.id.btRecommendation);
-//        btRecommendation.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast myToast = Toast.makeText(getApplicationContext(),"추천 눌렀다", Toast.LENGTH_SHORT);
-//                myToast.show();
-//            }
-//        });
-
-
-
-        btTravel = findViewById(R.id.btTravel);
-                btTravel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast myToast = Toast.makeText(getApplicationContext(),"눌렀다", Toast.LENGTH_SHORT);
-                        myToast.show();
-                        Intent travelIntent = new Intent(MainActivity.this,TravelActivity.class);
-                        startActivity(travelIntent);
-                    }
-                });
 
 
     }
