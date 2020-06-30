@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.uncontact.MainBottom.bottom_sheet;
+import com.example.uncontact.Res.RestaurantActivity;
 
 import java.util.ArrayList;
 
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
             public void onClick(View v) {
                 Toast myToast = Toast.makeText(getApplicationContext(),"눌렀다", Toast.LENGTH_SHORT);
                 myToast.show();
-                Intent travelIntent = new Intent(MainActivity.this,RestaurantActivity.class);
+                Intent travelIntent = new Intent(MainActivity.this, RestaurantActivity.class);
                 startActivity(travelIntent);
             }
         });
