@@ -119,4 +119,19 @@
             android:text="타슈" />
     </LinearLayout>
 
+    <!--   자슈 리사이클러뷰 리니어-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/stay_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_ride" />
+    </LinearLayout>
+
 </LinearLayout>

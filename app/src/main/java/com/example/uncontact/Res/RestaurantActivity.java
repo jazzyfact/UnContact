@@ -1,4 +1,4 @@
-package com.example.uncontact;
+package com.example.uncontact.Res;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,10 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.uncontact.Adapter.RestaurantAdapter;
+import com.example.uncontact.GoodsBuy.GoodsBuyActivity;
+import com.example.uncontact.MainActivity;
 import com.example.uncontact.Model.RestaurantItem;
+import com.example.uncontact.R;
+import com.example.uncontact.Ride.RideActivity;
+import com.example.uncontact.Stay.StayActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class RestaurantActivity extends AppCompatActivity implements View.OnClickListener {
 
