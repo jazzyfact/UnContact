@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +36,16 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         this.list = list;
     }
 
+    private OnItemClickListener mListener = null ;
+
+    public interface OnItemClickListener {
+        void onItemClick(View v, int position) ;
+    }
+
+    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener ;
+    }
 
 
 
@@ -63,6 +74,8 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         holder.rbResStar.setRating(item.getRating());
 
 
+
+
     }
 // getItemCount() - 전체 데이터 갯수 리턴.
     @Override
@@ -86,7 +99,25 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
             tvResIntro = itemView.findViewById(R.id.tv_res_intro);
             rbResStar = itemView.findViewById(R.id.ratingBar);
 
+            //클릭리스너
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if(position != RecyclerView.NO_POSITION){
 
+                        if(mListener != null){
+                            mListener.onItemClick(v,position);
+
+
+                        }
+
+
+
+
+                    }
+                }
+            });
 
 
         }

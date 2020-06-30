@@ -8,7 +8,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/iv_res_detail_image"
+        android:id="@+id/iv_res_menu_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"
@@ -17,27 +17,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="15sp"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="15sp">
 
         <TextView
-            android:id="@+id/tv_res_detail_name"
+            android:id="@+id/tv_res_menu_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="20sp"
+            android:text="불고기"
             android:textColor="#000"
-            android:text="TextView" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_res_detail_intro"
+            android:id="@+id/tv_res_menu_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:text="달달한맛"
             android:textColor="#000"
-            android:text="TextView" />
+            android:textSize="20sp" />
 
 
     </LinearLayout>

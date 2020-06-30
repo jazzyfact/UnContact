@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.uncontact.Adapter.RestaurantAdapter;
 import com.example.uncontact.Model.RestaurantItem;
@@ -70,7 +71,22 @@ public class RestaurantActivity extends AppCompatActivity implements View.OnClic
         adapter = new RestaurantAdapter(list);
         recyclerView.setAdapter(adapter);
 
+
+        //어댑터클릭리스너
+        adapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                // 클릭했을때 원하는데로 처리해주는 부분
+                Toast myToast = Toast.makeText(getApplicationContext(),"포지션 눌렀다" + position, Toast.LENGTH_SHORT);
+                myToast.show();
+                Intent intentDetail = new Intent(RestaurantActivity.this, RestaurantDetailActivity.class);
+                startActivity(intentDetail);
+            }
+        });
+
     }
+
+
 
     @Override
     public void onClick(View v) {
@@ -101,4 +117,11 @@ public class RestaurantActivity extends AppCompatActivity implements View.OnClic
         }
 
     }
+
+
+
+
+
+
+
 }

@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RestaurantSelectMenuActivity">
+    tools:context=".ResSelectMenuActivity">
 
     <ImageView
         android:id="@+id/res_select_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginBottom="10sp"
         android:layout_gravity="center"
         app:srcCompat="@mipmap/ic_launcher" />
@@ -165,11 +165,13 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp"
         android:background="#D8D8D8"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
@@ -183,16 +185,20 @@
             android:text="금액" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/res_menu_total_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="250sp"
             android:gravity="right"
-            android:text="TextView" />
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="16000원" />
 
 
     </LinearLayout>
 
-    <Button
+    Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -56,8 +56,11 @@
         android:text="메뉴" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/res_detail_recylcerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/res_detail_recylcerview"/>
+        tools:listitem="@layout/item_res_detail">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>
