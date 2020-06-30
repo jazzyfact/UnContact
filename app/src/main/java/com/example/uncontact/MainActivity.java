@@ -55,11 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 onClick_request(v);
             }
         });
-
-
-
     }
-
 
     // 부트페이 관련한 메소드 시작 -----------------------------------------------------------------------
     public void onClick_request(View v) {
