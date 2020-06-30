@@ -58,61 +58,66 @@
         android:layout_height="80sp"
         android:layout_marginTop="0sp"
         android:orientation="vertical"
-        android:paddingHorizontal="30sp"
+        android:paddingHorizontal="0sp"
         android:background="@drawable/shape">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="1">
         <ImageView
             android:id="@+id/iv_cardImage"
             android:layout_width="60sp"
             android:layout_height="40sp"
             android:layout_marginLeft="20sp"
-            android:background="@drawable/shape"
+            android:src="@drawable/maincard"
             android:backgroundTint="@color/colorPrimary"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <TextView
-            android:id="@+id/textView"
+            android:layout_weight="1"
+           />
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="사용가능금액"
-            android:textColor="#000"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.186"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical"
+            android:layout_marginLeft="10sp"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사용가능금액"
+                android:textColor="#000"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.186"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20000원"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="20sp"
+               />
+        </LinearLayout>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="20000원"
-            android:textColor="#000"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.186"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
             android:id="@+id/imageView"
             android:layout_width="60sp"
             android:layout_height="40sp"
-            android:layout_marginLeft="20sp"
+            android:layout_marginHorizontal="40sp"
             android:background="@drawable/shape"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/colorYellow"
+            android:layout_weight="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="2일권"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:gravity="center"/>
         </LinearLayout>
         </LinearLayout>
 <!--사용가능 금액 끝 -->
@@ -165,14 +170,14 @@
 
         <ImageView
             android:id="@+id/iv_stamImage"
-            android:layout_width="60sp"
-            android:layout_height="40sp"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
             android:background="@drawable/shape"
-            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/qrcode7240"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
             app:layout_constraintStart_toEndOf="@+id/tv_stamp"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 <!--스탬프 끝 -->
