@@ -8,7 +8,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/iv_stay_image"
+        android:id="@+id/iv_stay_room_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"
@@ -22,19 +22,19 @@
         android:paddingLeft="15sp">
 
         <TextView
-            android:id="@+id/tv_stay_title"
+            android:id="@+id/tv_stay_room_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="호텔1"
+            android:text="룸 1"
             android:textColor="#000"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_stay_intro"
+            android:id="@+id/tv_stay_room_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="호텔1 설명"
+            android:text="룸 설명"
             android:textColor="#000"
             android:textSize="20sp" />
 

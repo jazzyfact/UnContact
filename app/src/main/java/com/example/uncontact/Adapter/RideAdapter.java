@@ -97,14 +97,12 @@ public class RideAdapter extends RecyclerView.Adapter<RideAdapter.ViewHolder> {
                         if(mListener != null){
                             mListener.onItemClick(v,position);
 
-
                         }
-
-
                     }
                 }
             });
 
+            ////////////클릭이번트 끝
 
         }
     }

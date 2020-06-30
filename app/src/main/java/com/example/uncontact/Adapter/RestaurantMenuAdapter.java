@@ -94,9 +94,6 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
 
                         }
 
-
-
-
                     }
                 }
             });

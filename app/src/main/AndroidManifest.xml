@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Stay.StayDetailActivity"></activity>
+        <activity android:name=".Stay.StayPayCompleteActivity"></activity>
+        <activity android:name=".Stay.StayPayActivity" />
+        <activity android:name=".Stay.StayRoomSelectActivity" />
+        <activity android:name=".Stay.StayDetailActivity" />
         <activity android:name=".GoodsBuy.GoodsBuyPayCompleteActivity" />
         <activity android:name=".GoodsBuy.GoodsBuyPayActivity" />
         <activity android:name=".GoodsBuy.GoodsBuyCartActivity" />

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_shape"
+    android:orientation="vertical"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    tools:context=".MainBottom.bottom_sheet">
+
+
+    <!--  ========================== 결제완료 시작 ============================= -->
+    <LinearLayout
+        android:id="@+id/stay_ll_passwordPush"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30sp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#fff"
+        android:orientation="vertical"
+        android:padding="30sp"
+        android:visibility="visible">
+        <!--        결제금액 시작 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="결제하기"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:layout_weight="1"
+            android:text="홍길동님의 결제 비밀번호"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/stay_tv_btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e9e9e9"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="1"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/stay_tv_btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:background="#e9e9e9"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="2"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/stay_tv_btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:background="#e9e9e9"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="3"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/stay_tv_btn4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e9e9e9"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="4"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/stay_tv_btn5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:background="#e9e9e9"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="5"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/stay_tv_btn6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:background="#e9e9e9"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="6"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:background="#e74c3c"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="x"
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/stay_tv_btn7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e9e9e9"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="7"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/stay_tv_btn8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:background="#e9e9e9"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="8"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/stay_tv_btn9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:background="#e9e9e9"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="9"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_btn0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:background="#e9e9e9"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:text="0"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_room_pass_send"
+            android:layout_width="match_parent"
+            android:layout_height="43sp"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/shape"
+            android:backgroundTint="#2ecc71"
+            android:text="보내기"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+        <!--결제금액 끝 -->
+    </LinearLayout>
+    <!--  ==========================비밀번호 치는곳으로 끝 ============================= -->
+
+
+    <!--  ========================== 결제 완료 시작 ============================= -->
+    <LinearLayout
+        android:id="@+id/ll_passwordFine"
+        android:layout_width="match_parent"
+        android:layout_height="400sp"
+        android:layout_marginHorizontal="30sp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#fff"
+        android:orientation="vertical"
+        android:padding="30sp"
+        android:visibility="gone">
+        <!--        결제금액 시작 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="결제하기"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="결제가"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:layout_weight="1"
+            android:text="완료되었습니다"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+    <!--  ========================== 결제 완료 끝 ============================= -->
+
+
+</LinearLayout>
+
