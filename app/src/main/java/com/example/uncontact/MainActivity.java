@@ -2,6 +2,8 @@ package com.example.uncontact;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button btBuying;
+    TextView btTravel;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -43,7 +46,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 메인 리사이클러뷰 시작 -----------------------------------------------------------------------
+        re_recmdRecyclerview = findViewById(R.id.re_recmdRecyclerview);
+        re_recmdRecyclerview.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL));
+        re_recmdRecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(),2)); // 레이아웃 메니저
+        // 장바구니 어레이리스트임
+        // 이거를 buying class로 보내서 해당하는 사람들이 결제한 리스트가 뭔지 알아야한다.
+//        addChatAdapter = new addChatAdapter(addChatItemClass); // 어댑터에 리스트 붙이고
+//        item_add_list.setAdapter(addChatAdapter); // 리사이클러뷰에 어댑터 장착
+//        addChatAdapter.notifyDataSetChanged();
 
+        // 메인 리사이클러뷰 시작 -----------------------------------------------------------------------
         // 초기설정 - 해당 프로젝트(안드로이드)의 application id 값을 설정합니다. 결제와 통계를 위해 꼭 필
         BootpayAnalytics.init(this, "5ef8c37e4f74b40026f2b8f9");
 
@@ -55,6 +68,21 @@ public class MainActivity extends AppCompatActivity {
                 onClick_request(v);
             }
         });
+
+        // 여행 보러가기 시작 --------------------------------------------------------------------------
+
+        btTravel = findViewById(R.id.btTravel);
+        btTravel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast myToast = Toast.makeText(getApplicationContext(),"눌렀다", Toast.LENGTH_SHORT);
+                myToast.show();
+                Intent travelIntent = new Intent(MainActivity.this,RestaurantActivity.class);
+                startActivity(travelIntent);
+            }
+        });
+        // 여행 보러가기 끝 ---------------------------------------------------------------------------
+
     }
 
     // 부트페이 관련한 메소드 시작 -----------------------------------------------------------------------
