@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class RestaurantSelectMenuActivity extends AppCompatActivity {
+public class ResCartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restaurant_select_menu);
+        setContentView(R.layout.activity_res_cart);
     }
 }
