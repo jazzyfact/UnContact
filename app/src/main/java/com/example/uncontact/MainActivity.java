@@ -2,6 +2,7 @@ package com.example.uncontact;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -30,6 +31,10 @@ import kr.co.bootpay.model.BootUser;
 
 public class MainActivity extends AppCompatActivity {
 
+    // 리사이클러뷰 관련 설정
+    RecyclerView re_recmdRecyclerview;
+
+
     Button btBuying;
 
     @SuppressLint("WrongViewCast")
@@ -54,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
     // 부트페이 관련한 메소드 시작 -----------------------------------------------------------------------
     public void onClick_request(View v) {
         // 결제호출

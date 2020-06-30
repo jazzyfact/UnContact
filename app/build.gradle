@@ -32,4 +32,9 @@ dependencies {
     // zzing 라이브러리(qrcode)
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // 리사이클러뷰 아템뷰 관련
+
+    // 에디트 텍스트뷰 관련
+
 }
