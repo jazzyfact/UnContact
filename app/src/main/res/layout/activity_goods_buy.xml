@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/btRecommendation"
+                android:id="@+id/btn_goos_buy_recomm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="추천"
@@ -45,7 +45,7 @@
 
 
             <TextView
-                android:id="@+id/btTravel"
+                android:id="@+id/btn_goods_buy_Travel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="여행"
@@ -75,7 +75,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_goods_buy_res"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -86,7 +86,7 @@
             android:text="드슈" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_goods_buy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -97,7 +97,7 @@
             android:text="사슈" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_goods_buy_stay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -108,7 +108,7 @@
             android:text="자슈" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tv_goods_buy_ride"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -119,4 +119,18 @@
             android:text="타슈" />
     </LinearLayout>
 
+<!--사슈 리사이클러뷰-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/goods_buy_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_goods_buy" />
+    </LinearLayout>
 </LinearLayout>

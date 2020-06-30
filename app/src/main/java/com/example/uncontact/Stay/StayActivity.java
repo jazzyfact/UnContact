@@ -1,8 +1,10 @@
-package com.example.uncontact;
+package com.example.uncontact.Stay;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.uncontact.R;
 
 public class StayActivity extends AppCompatActivity {
 

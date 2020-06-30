@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
-    tools:context=".RestaurantDetailActivity">
+    android:padding="30sp"
+    tools:context=".Res.RestaurantDetailActivity">
 
     <TextView
         android:id="@+id/tv_res_detail_title"
