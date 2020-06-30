@@ -1,4 +1,4 @@
-package com.example.uncontact;
+package com.example.uncontact.Res;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.uncontact.Adapter.RestaurantAdapter;
 import com.example.uncontact.Adapter.RestaurantMenuAdapter;
 import com.example.uncontact.Model.ResMenuItem;
+import com.example.uncontact.R;
 
 import java.util.ArrayList;
 

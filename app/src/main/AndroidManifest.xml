@@ -12,6 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Stay.StayDetailActivity"></activity>
+        <activity android:name=".GoodsBuy.GoodsBuyPayCompleteActivity" />
+        <activity android:name=".GoodsBuy.GoodsBuyPayActivity" />
+        <activity android:name=".GoodsBuy.GoodsBuyCartActivity" />
+        <activity android:name=".GoodsBuy.GoodsBuyDetailActivity" />
+        <activity android:name=".Ride.RidePayCompleteActivity" />
         <activity android:name=".login.member" />
         <activity android:name=".stamp" />
         <activity android:name=".Splash">
@@ -22,12 +28,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".login.login" />
-        <activity android:name=".RestaurantDetailActivity" />
+        <activity android:name=".Res.RestaurantActivity" />
+        <activity android:name=".Res.RestaurantDetailActivity" />
+        <activity android:name=".Res.ResSelectMenuActivity" />
+        <activity android:name=".Res.ResCartActivity" />
+        <activity android:name=".Res.ResPayActivity" />
+        <activity android:name=".Res.ResPayCompleteActivity" />
         <activity android:name=".TravelActivity" />
-        <activity android:name=".RideActivity" />
-        <activity android:name=".StayActivity" />
-        <activity android:name=".GoodsBuyActivity" />
-        <activity android:name=".RestaurantActivity" />
+        <activity android:name=".Ride.RideActivity" />
+        <activity android:name=".Ride.RideCartActivity" />
+        <activity android:name=".Ride.RidePayActivity" />
+        <activity android:name=".Stay.StayActivity" />
+        <activity android:name=".GoodsBuy.GoodsBuyActivity" />
         <activity android:name=".QrCodeActivity" />
         <activity android:name=".map" />
 
