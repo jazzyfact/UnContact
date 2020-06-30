@@ -60,10 +60,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
             android:background="@drawable/btn_shape"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="57sp"
             android:layout_marginTop="20sp"
             >
             <TextView
@@ -73,8 +73,9 @@
                 android:text="회원가입하기 "
                 android:textColor="#385DA8"
                 android:textSize="15sp"
-                android:textFontWeight="800"
-                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
                 />
 
         </LinearLayout>

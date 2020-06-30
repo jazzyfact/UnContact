@@ -230,7 +230,7 @@
         android:layout_marginHorizontal="30sp"
         android:orientation="vertical"
         android:backgroundTint="#fff"
-        android:visibility="gone">
+        android:visibility="visible">
         <!--        결제금액 시작 -->
         <TextView
             android:layout_width="wrap_content"
@@ -239,16 +239,53 @@
             android:textColor="#000"
             android:textStyle="bold"
             android:textSize="20sp" />
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="홍길동님의 결제 비밀번호"
-            android:textColor="#000"
-            android:textStyle="normal"
-            android:textSize="18sp"
-            android:layout_marginTop="10sp"
-            android:layout_gravity="center"
-            android:layout_weight="1"/>
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:background="@drawable/circle"
+                android:layout_marginVertical="15sp"
+                android:layout_marginLeft="80sp"
+                android:backgroundTint="#e9e9e9"
+               />
+            <ImageView
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:background="@drawable/circle"
+                android:layout_marginVertical="15sp"
+                android:layout_marginLeft="20sp"
+                android:backgroundTint="#e9e9e9"
+                />
+            <ImageView
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:background="@drawable/circle"
+                android:layout_marginVertical="15sp"
+                android:layout_marginLeft="20sp"
+                android:backgroundTint="#e9e9e9"
+                />
+            <ImageView
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:background="@drawable/circle"
+                android:layout_marginVertical="15sp"
+                android:layout_marginLeft="20sp"
+                android:backgroundTint="#e9e9e9"
+                />
+        </LinearLayout>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="홍길동님의 결제 비밀번호"-->
+<!--            android:textColor="#000"-->
+<!--            android:textStyle="normal"-->
+<!--            android:textSize="18sp"-->
+<!--            android:layout_marginTop="10sp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1"/>-->
 
         <LinearLayout
             android:layout_width="match_parent"

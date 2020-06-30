@@ -127,13 +127,14 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
                 bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
             }
         });
-        tv_barCode = findViewById(R.id.tv_barCode);
-        tv_barCode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
+//        tv_barCode = findViewById(R.id.tv_barCode);
+//        tv_barCode.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
         // 바텀 네비게이션 끝 --------------------------------------------------------------------------
 
