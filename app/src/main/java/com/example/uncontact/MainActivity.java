@@ -17,6 +17,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.uncontact.MainBottom.bottom_sheet;
+
+import java.util.ArrayList;
+
 import kr.co.bootpay.Bootpay;
 import kr.co.bootpay.BootpayAnalytics;
 import kr.co.bootpay.enums.Method;
@@ -31,10 +35,16 @@ import kr.co.bootpay.listener.ReadyListener;
 import kr.co.bootpay.model.BootExtra;
 import kr.co.bootpay.model.BootUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements bottom_sheet.BottomSheetListener {
 
     // 리사이클러뷰 관련 설정
     RecyclerView re_recmdRecyclerview;
+    MainReAdapter mainReAdapter;
+    ArrayList<MainReData> addMainItemClass;
+
+    // 바텀 네비게이션
+    TextView tv_qrCode;
+    TextView tv_barCode;
 
 
     Button btBuying;
@@ -47,14 +57,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // 메인 리사이클러뷰 시작 -----------------------------------------------------------------------
+
+        addMainItemClass = new ArrayList<>();
+        addMainItemClass.add(new MainReData("image1","카데고리","타이틀1","내용1"));
+        addMainItemClass.add(new MainReData("image1","카데고리","타이틀2","내용2"));
+        addMainItemClass.add(new MainReData("image1","카데고리","타이틀3","내용3"));
+        addMainItemClass.add(new MainReData("image1","카데고리","타이틀4","내용4"));
         re_recmdRecyclerview = findViewById(R.id.re_recmdRecyclerview);
         re_recmdRecyclerview.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL));
         re_recmdRecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(),2)); // 레이아웃 메니저
         // 장바구니 어레이리스트임
         // 이거를 buying class로 보내서 해당하는 사람들이 결제한 리스트가 뭔지 알아야한다.
-//        addChatAdapter = new addChatAdapter(addChatItemClass); // 어댑터에 리스트 붙이고
-//        item_add_list.setAdapter(addChatAdapter); // 리사이클러뷰에 어댑터 장착
-//        addChatAdapter.notifyDataSetChanged();
+        mainReAdapter = new MainReAdapter(addMainItemClass); // 어댑터에 리스트 붙이고
+        re_recmdRecyclerview.setAdapter(mainReAdapter); // 리사이클러뷰에 어댑터 장착
+        mainReAdapter.notifyDataSetChanged();
+
+        // 리사이클러뷰에 데이터 넣기
+
 
         // 메인 리사이클러뷰 시작 -----------------------------------------------------------------------
         // 초기설정 - 해당 프로젝트(안드로이드)의 application id 값을 설정합니다. 결제와 통계를 위해 꼭 필
@@ -82,6 +101,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // 여행 보러가기 끝 ---------------------------------------------------------------------------
+
+
+        // 바텀 네비게이션 시작 ------------------------------------------------------------------------
+
+        tv_qrCode = findViewById(R.id.tv_qrCode);
+        tv_qrCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottom_sheet bottomSheet = new bottom_sheet();
+                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
+            }
+        });
+        tv_barCode = findViewById(R.id.tv_barCode);
+        tv_barCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+
+        // 바텀 네비게이션 끝 --------------------------------------------------------------------------
+
 
     }
 
@@ -153,6 +196,11 @@ public class MainActivity extends AppCompatActivity {
                         })
                 .request();
 
+    }
+
+    @Override
+    public void onButtonClicked(String text) {
+        Log.i("바텀시트 클릭함 ", "onButtonClicked: ");
     }
     // 부트페이 관련한 메소드 끝 -----------------------------------------------------------------------
 }
