@@ -1,8 +1,6 @@
 package com.example.uncontact.Adapter;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.media.Rating;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,32 +11,38 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.uncontact.Model.Travel;
+import com.example.uncontact.Model.RestaurantItem;
 import com.example.uncontact.R;
 
 import java.util.ArrayList;
 
-public class TravelAdapter extends RecyclerView.Adapter<TravelAdapter.ViewHolder> {
+public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.ViewHolder> {
 
-    ArrayList<Travel> list = new ArrayList<>();
-//    private ArrayList<Travel> list = null;
+    ArrayList<RestaurantItem> list = new ArrayList<>();
+//    private ArrayList<RestaurantItem> list = null;
     Context context;
-
-    public TravelAdapter(ArrayList<Travel> list, Context context) {
-        this.list = list;
-        this.context = context;
-    }
-
     // 생성자에서 데이터 리스트 객체를 전달받음.
-    TravelAdapter(ArrayList<Travel> list) {
-        list = list ;
+
+
+//    public RestaurantAdapter() {
+//        this.list = list;
+//        this.context = context;
+//    }
+
+
+
+    public RestaurantAdapter(ArrayList<RestaurantItem> list){
+        this.list = list;
     }
+
+
+
 
 
     // onCreateViewHolder() - 아이템 뷰를 위한 뷰홀더 객체 생성하여 리턴.
     @NonNull
     @Override
-    public TravelAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RestaurantAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_eatting, parent, false);
@@ -51,12 +55,12 @@ public class TravelAdapter extends RecyclerView.Adapter<TravelAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Travel item = list.get(position);
+        RestaurantItem item = list.get(position);
 
-        holder.ivResImage.setImageDrawable(item.getImage());
+        holder.ivResImage.setImageResource(item.getImage());
         holder.tvResName.setText(item.getRestaurantName());
         holder.tvResIntro.setText(item.getRestaurantIntro());
-//        holder.rbResStar.setRating(item.getRestaurantStar());
+        holder.rbResStar.setRating(item.getRating());
 
 
     }

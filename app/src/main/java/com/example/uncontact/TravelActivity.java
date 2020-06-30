@@ -1,20 +1,14 @@
 package com.example.uncontact;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-
-import com.example.uncontact.Adapter.TravelAdapter;
-import com.example.uncontact.Model.Travel;
-
-import java.util.ArrayList;
 
 public class TravelActivity extends AppCompatActivity {
 
 //    private RecyclerView recyclerView =null;
-//    private TravelAdapter adapter = null;
-//    private ArrayList<Travel> list = new ArrayList<Travel>();
+//    private RestaurantAdapter adapter = null;
+//    private ArrayList<RestaurantItem> list = new ArrayList<RestaurantItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

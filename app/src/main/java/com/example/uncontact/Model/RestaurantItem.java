@@ -3,20 +3,26 @@ package com.example.uncontact.Model;
 import android.graphics.drawable.Drawable;
 import android.widget.RatingBar;
 
-public class Travel {
+public class RestaurantItem {
 
     //가게이미지, 가게이름, 가게소개글, 가게 평점
-    private Drawable Image;
+    private int Image;
     private String restaurantName;
     private String restaurantIntro;
-    private RatingBar restaurantStar;
+    private int restaurantStar;
 
+    public RestaurantItem(int image, String restaurantName, String restaurantIntro, int restaurantStar) {
+        Image = image;
+        this.restaurantName = restaurantName;
+        this.restaurantIntro = restaurantIntro;
+        this.restaurantStar = restaurantStar;
+    }
 
-    public Drawable getImage() {
+    public int getImage() {
         return Image;
     }
 
-    public void setImage(Drawable image) {
+    public void setImage(int image) {
         Image = image;
     }
 
@@ -36,11 +42,14 @@ public class Travel {
         this.restaurantIntro = restaurantIntro;
     }
 
-    public RatingBar getRestaurantStar() {
+
+
+    public void setRestaurantStar(int restaurantStar) {
+        this.restaurantStar = restaurantStar;
+    }
+
+    public float getRating() {
         return restaurantStar;
     }
 
-    public void setRestaurantStar(RatingBar restaurantStar) {
-        this.restaurantStar = restaurantStar;
-    }
 }
