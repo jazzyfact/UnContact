@@ -48,9 +48,6 @@ public class MainReAdapter extends RecyclerView.Adapter<MainReAdapter.ViewHolder
     // 어댑터 뷰홀더 설정
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
         }
