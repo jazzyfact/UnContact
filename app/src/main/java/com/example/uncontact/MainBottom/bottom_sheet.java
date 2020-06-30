@@ -2,6 +2,7 @@ package com.example.uncontact.MainBottom;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.uncontact.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -27,11 +29,12 @@ public class bottom_sheet extends BottomSheetDialogFragment {
     private BottomSheetListener mListener;
 
     // 비밀번호 누르기
-    ImageView tv_btn1;
-    ImageView tv_btn2;
-    ImageView tv_btn3;
-    ImageView tv_btn4;
-
+    TextView tv_btn1;
+    TextView tv_btn2;
+    TextView tv_btn3;
+    TextView tv_btn4;
+    ImageView iv_pwCircle4,iv_pwCircle3,iv_pwCircle2,iv_pwCircle1;
+    ImageView iv_after_pwCircle1,iv_after_pwCircle2,iv_after_pwCircle3,iv_after_pwCircle4;
 
     @Nullable
     @Override
@@ -86,6 +89,45 @@ public class bottom_sheet extends BottomSheetDialogFragment {
         tv_btn2 = v.findViewById(R.id.tv_btn2);
         tv_btn3 = v.findViewById(R.id.tv_btn3);
         tv_btn4 = v.findViewById(R.id.tv_btn4);
+        iv_pwCircle1 = v.findViewById(R.id.iv_pwCircle1);
+        iv_pwCircle2 = v.findViewById(R.id.iv_pwCircle2);
+        iv_pwCircle3 = v.findViewById(R.id.iv_pwCircle3);
+        iv_pwCircle4 = v.findViewById(R.id.iv_pwCircle4);
+        iv_after_pwCircle1 = v.findViewById(R.id.iv_after_pwCircle1);
+        iv_after_pwCircle2 = v.findViewById(R.id.iv_after_pwCircle2);
+        iv_after_pwCircle3 = v.findViewById(R.id.iv_after_pwCircle3);
+        iv_after_pwCircle4 = v.findViewById(R.id.iv_after_pwCircle4);
+
+        final int color = ContextCompat.getColor(getActivity(), R.color.colorPrimary);
+
+        tv_btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iv_pwCircle1.setVisibility(View.GONE);
+                iv_after_pwCircle1.setVisibility(View.VISIBLE);
+            }
+        });
+        tv_btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iv_pwCircle2.setVisibility(View.GONE);
+                iv_after_pwCircle2.setVisibility(View.VISIBLE);
+            }
+        });
+        tv_btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iv_pwCircle3.setVisibility(View.GONE);
+                iv_after_pwCircle3.setVisibility(View.VISIBLE);
+            }
+        });
+        tv_btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iv_pwCircle4.setVisibility(View.GONE);
+                iv_after_pwCircle4.setVisibility(View.VISIBLE);
+            }
+        });
 
         // 비밀번호 누르기 끝 --------------------------------------------------------------------------
 

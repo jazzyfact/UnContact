@@ -5,5 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorControlNormal">#D8D8D8</color>
     <color name="colorControlActivated">#FFBF00</color>
+    <color name="colorYellow">#f1c40f</color>
 
 </resources>
