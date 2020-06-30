@@ -39,6 +39,7 @@ public class MainReAdapter extends RecyclerView.Adapter<MainReAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MainReAdapter.ViewHolder holder, int position) {
+        holder.tv_main_itemImage.setImageResource(R.drawable.berry);
         holder.tv_main_itemCartegory.setText(mData.get(position).mainReCategory);
         holder.tv_main_itemTitle.setText(mData.get(position).mainReTitle);
         holder.tv_main_itemContent.setText(mData.get(position).mainReContent);
@@ -60,7 +61,7 @@ public class MainReAdapter extends RecyclerView.Adapter<MainReAdapter.ViewHolder
             tv_main_itemImage = itemView.findViewById(R.id.tv_main_itemImage);
             tv_main_itemCartegory = itemView.findViewById(R.id.tv_main_itemCartegory);
             tv_main_itemTitle = itemView.findViewById(R.id.tv_main_itemTitle);
-            tv_main_itemContent = itemView.findViewById(R.id.tv_main_itemImage);
+            tv_main_itemContent = itemView.findViewById(R.id.tv_main_itemContent);
         }
     }
 

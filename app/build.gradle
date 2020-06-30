@@ -36,5 +36,6 @@ dependencies {
     // 리사이클러뷰 아템뷰 관련
 
     // 에디트 텍스트뷰 관련
-
+    // 바텀네비게이션 관련
+    implementation 'com.google.android.material:material:1.0.0'
 }
