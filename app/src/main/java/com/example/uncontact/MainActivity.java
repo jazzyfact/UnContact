@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
     Button btBuying;
     TextView btTravel;
 
+    // 스탬프 관련
+    ImageView iv_stamImage;
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +105,17 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         });
         // 여행 보러가기 끝 ---------------------------------------------------------------------------
 
+        //  스탬프 적립 시작 --------------------------------------------------------------------------
+        iv_stamImage = findViewById(R.id.iv_stamImage);
+        iv_stamImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 큐알코드 스캔 후 스탬프 레이아웃으로
+                startActivity(new Intent(getApplication(), stamp.class));
+            }
+        });
+
+        //  스탬프 적립 끝 ----------------------------------------------------------------------------
 
         // 바텀 네비게이션 시작 ------------------------------------------------------------------------
 
@@ -120,8 +134,6 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
 
             }
         });
-
-
 
         // 바텀 네비게이션 끝 --------------------------------------------------------------------------
 

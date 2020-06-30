@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".stamp"
+    android:orientation="vertical"
+    android:background="#fff">
+
+    <LinearLayout
+        android:id="@+id/ll_passwordPush"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:padding="30sp"
+        android:layout_marginHorizontal="30sp"
+        android:orientation="vertical"
+        android:backgroundTint="#fff"
+        android:visibility="visible">
+        <!--        결제금액 시작 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QR코드 스캔 "
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="홍길동님의 스탬프 갯수"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="110sp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:background="@drawable/circle"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:background="@drawable/circle"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:layout_marginLeft="10sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:background="@drawable/circle2"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:layout_marginLeft="10sp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:background="@drawable/circle2"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:layout_marginLeft="10sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10sp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:background="@drawable/circle2"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:background="@drawable/circle2"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:layout_marginLeft="10sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:background="@drawable/circle2"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:layout_marginLeft="10sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:background="@drawable/circle2"
+                android:paddingHorizontal="22sp"
+                android:paddingVertical="10sp"
+                android:layout_marginLeft="10sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="스탬프 1개가 "
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="30sp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="적립되었습니다."
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="5sp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
