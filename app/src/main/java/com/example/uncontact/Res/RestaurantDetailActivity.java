@@ -36,7 +36,6 @@ public class RestaurantDetailActivity extends AppCompatActivity {
 
         //리사이클러뷰 set
         recyclerView = findViewById(R.id.res_detail_recylcerview);
-
         recyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
