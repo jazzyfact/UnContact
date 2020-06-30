@@ -12,13 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-        <activity android:name=".TravelActivity"></activity>
+        <activity android:name=".RestaurantSelectMenuActivity"></activity>
+        <activity android:name=".RestaurantDetailActivity" />
+        <activity android:name=".TravelActivity" />
         <activity android:name=".RideActivity" />
         <activity android:name=".StayActivity" />
         <activity android:name=".GoodsBuyActivity" />
-        <activity android:name=".EattingActivity" />
+        <activity android:name=".RestaurantActivity" />
         <activity android:name=".QrCodeActivity" />
         <activity android:name=".map" />
 
