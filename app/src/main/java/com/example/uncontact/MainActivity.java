@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.uncontact.MainBottom.bottom_sheet;
+import com.example.uncontact.Mypage.mypage;
 import com.example.uncontact.Res.RestaurantActivity;
 
 import java.util.ArrayList;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
 
     Button btBuying;
     TextView btTravel;
+    TextView bt_mypageSend;
 
     // 스탬프 관련
     ImageView iv_stamImage;
@@ -139,6 +141,15 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
 
         // 바텀 네비게이션 끝 --------------------------------------------------------------------------
 
+        // 마이페이지 시작 ----------------------------------------------------------------------------
+        bt_mypageSend  = findViewById(R.id.bt_mypageSend);
+        bt_mypageSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplication(), mypage.class));
+            }
+        });
+        // 마이페이지 끝 ------------------------------------------------------------------------------
 
     }
 
