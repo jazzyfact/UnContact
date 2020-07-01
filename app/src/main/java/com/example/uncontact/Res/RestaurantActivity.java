@@ -70,12 +70,14 @@ public class RestaurantActivity extends AppCompatActivity implements View.OnClic
         Log.i(TAG,"리사이클러뷰");
 
         ArrayList<RestaurantItem> list = new ArrayList<>();
-        list.add(new RestaurantItem(R.drawable.berry, "차오차오", "123123", 5));
+        list.add(new RestaurantItem(R.drawable.gogi, "꽃차돌", "나래가 추천하는 산성동 고기맛집", 5));
+        list.add(new RestaurantItem(R.drawable.cha, "차오차오", "24시간 영업하는 한남대학교 중식집", 4));
         list.add(new RestaurantItem(R.drawable.berry, "사랑채", "123123", 3));
-        list.add(new RestaurantItem(R.drawable.berry, "오부자강릉집", "123123", 1));
-        list.add(new RestaurantItem(R.drawable.berry, "차오차오", "123123", 2));
-        list.add(new RestaurantItem(R.drawable.berry, "차오차오", "123123", 3));
-        list.add(new RestaurantItem(R.drawable.berry, "차오차오", "123123", 3));
+        list.add(new RestaurantItem(R.drawable.mi, "미정숯불갈비", "123123", 3));
+        list.add(new RestaurantItem(R.drawable.berry, "오부자강릉집", "123123", 3));
+        list.add(new RestaurantItem(R.drawable.ho, "호박식당", "123123", 2));
+        list.add(new RestaurantItem(R.drawable.king, "왕궁바지락칼국수", "123123", 3));
+
 
         adapter = new RestaurantAdapter(list);
         recyclerView.setAdapter(adapter);
