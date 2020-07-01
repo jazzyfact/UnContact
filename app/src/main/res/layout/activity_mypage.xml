@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Mypage.mypage"
+    android:orientation="vertical">
+
+    <!--    상단 메뉴 시작 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="30sp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bt_Recommendation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="추천"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#a0a0a0"
+                />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btTravel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여행"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#a0a0a0"
+            android:layout_marginLeft="30sp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="right"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/bt_mypage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MY"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#000"
+                />
+
+            <View
+                android:layout_width="30sp"
+                android:layout_height="5sp"
+                android:background="#000"
+                android:layout_marginTop="5sp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="30sp"
+        android:layout_marginTop="20sp">
+
+        <TextView
+            android:id="@+id/btRecommendation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="홍길동 님의"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마이페이지 입니다."
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_marginTop="10sp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:background="#000"
+            android:layout_marginTop="30sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_mypageMycard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내카드"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                />
+            <TextView
+                android:id="@+id/tv_mypageMyb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="예약내역"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:textColor="#a0a0a0"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:background="#000"
+            android:layout_marginTop="10sp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="결제내역"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/re_mypagePayment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10sp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -185,8 +185,8 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="전송할 금액을 입력해주세요 "
-                android:textColor="#000"
+                android:hint="전송할 금액을 입력해주세요."
+                android:textColorHint="#808080"
                 android:textStyle="normal"
                 android:textSize="15sp"
                 android:layout_weight="1"

@@ -46,6 +46,18 @@
             android:textSize="20sp"
             android:textColor="#a0a0a0"
             android:layout_marginLeft="30sp"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/bt_mypageSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MY"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#a0a0a0"
+            android:layout_marginLeft="30sp"
             />
 
     </LinearLayout>
@@ -122,51 +134,39 @@
         </LinearLayout>
 <!--사용가능 금액 끝 -->
 <!--    스탬프 시작 -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingHorizontal="30sp"
+        android:background="@drawable/shape"
+        android:layout_marginHorizontal="30sp"
+        android:paddingHorizontal="20sp"
         android:layout_marginTop="10sp"
->
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="80sp"
-            android:background="@drawable/shape"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+        android:paddingVertical="10sp">
 
         <TextView
             android:id="@+id/tv_stampNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:text="스탬프 갯수"
             android:textColor="#000"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.063"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            />
 
         <TextView
             android:id="@+id/tv_stamp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:text="2/15"
             android:textColor="#000"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginLeft="80sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_stampNumber"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.121" />
+            android:layout_weight="1"
+            android:layout_gravity="center"
+          />
 
         <ImageView
             android:id="@+id/iv_stamImage"
@@ -174,12 +174,10 @@
             android:layout_height="50sp"
             android:background="@drawable/shape"
             android:src="@drawable/qrcode7240"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/tv_stamp"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_weight="1"
+            android:layout_gravity="center"
+             />
+    </LinearLayout>
 <!--스탬프 끝 -->
 
 
@@ -200,43 +198,53 @@
         android:layout_marginTop="10sp"
         android:paddingHorizontal="30sp"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bottom_shape"
+        android:paddingVertical="20sp">
 
-        <ImageView
-            android:id="@+id/iv_backgrund"
-            android:layout_width="match_parent"
-            android:layout_height="80sp"
-            android:background="@drawable/bottom_shape"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_backgrund"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="80sp"-->
+<!--            android:background="@drawable/bottom_shape"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"/>-->
 
         <ImageView
             android:id="@+id/iv_card_image"
             android:layout_width="60sp"
             android:layout_height="40sp"
             android:layout_marginStart="40dp"
-            android:background="@drawable/shape"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/maincard"
+            android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/tv_qrCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="24dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
             android:text="QR코드 결제"
             android:textColor="#fff"
             android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/iv_card_image"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_qrCodeScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="QR코드 스캔"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-<!--        <TextView-->
+        <!--        <TextView-->
 <!--            android:id="@+id/tv_barCode"-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
@@ -249,5 +257,5 @@
 <!--            app:layout_constraintStart_toEndOf="@+id/tv_qrCode"-->
 <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </LinearLayout>
