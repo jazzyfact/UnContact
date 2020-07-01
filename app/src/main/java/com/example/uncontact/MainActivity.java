@@ -85,10 +85,10 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         // 메인 리사이클러뷰 시작 -----------------------------------------------------------------------
 
         addMainItemClass = new ArrayList<>();
-        addMainItemClass.add(new MainReData("image1", "카데고리", "타이틀1", "내용1"));
-        addMainItemClass.add(new MainReData("image1", "카데고리", "타이틀2", "내용2"));
-        addMainItemClass.add(new MainReData("image1", "카데고리", "타이틀3", "내용3"));
-        addMainItemClass.add(new MainReData("image1", "카데고리", "타이틀4", "내용4"));
+        addMainItemClass.add(new MainReData("R.drawable.citytour", "볼거리", "대전 시티투어", "대전 핵심 관광지를 하나로!"));
+        addMainItemClass.add(new MainReData("R.drawable.toto", "축제", "대전 토토즐 페스티벌", "토요일 토요일은 즐거워!"));
+        addMainItemClass.add(new MainReData("R.drawable.tashu", "운동", "대전 시민 공용자전거", "원하는 장소에서 쉽게 대여하고, 사용후 편리하게 반납하는"));
+        addMainItemClass.add(new MainReData("R.drawable.deachung", "힐링", "대청호 오백리길", "걸으며 사색하는 그림 속 호수"));
         re_recmdRecyclerview = findViewById(R.id.re_recmdRecyclerview);
         re_recmdRecyclerview.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL));
         re_recmdRecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2)); // 레이아웃 메니저

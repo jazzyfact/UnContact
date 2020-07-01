@@ -39,7 +39,17 @@ public class MainReAdapter extends RecyclerView.Adapter<MainReAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MainReAdapter.ViewHolder holder, int position) {
-        holder.tv_main_itemImage.setImageResource(R.drawable.berry);
+
+        if(mData.get(position).mainReImage.equals("R.drawable.citytour")) {
+            holder.tv_main_itemImage.setImageResource(R.drawable.citytour);
+        } else if (mData.get(position).mainReImage.equals("R.drawable.toto")){
+            holder.tv_main_itemImage.setImageResource(R.drawable.toto);
+        } else if (mData.get(position).mainReImage.equals("R.drawable.tashu")){
+            holder.tv_main_itemImage.setImageResource(R.drawable.tashu);
+        } else {
+            holder.tv_main_itemImage.setImageResource(R.drawable.deachung);
+        }
+
         holder.tv_main_itemCartegory.setText(mData.get(position).mainReCategory);
         holder.tv_main_itemTitle.setText(mData.get(position).mainReTitle);
         holder.tv_main_itemContent.setText(mData.get(position).mainReContent);
