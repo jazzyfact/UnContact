@@ -98,13 +98,13 @@
             android:text="수량" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/res_select_minus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_minus" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/res_select_count_num"
             android:layout_width="30dp"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -112,7 +112,7 @@
             android:text="1" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/res_select_plus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_add" />

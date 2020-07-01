@@ -47,7 +47,6 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
 
         //리사이클러뷰 set
         recyclerView = findViewById(R.id.stay_recyclerview);
-
         recyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
