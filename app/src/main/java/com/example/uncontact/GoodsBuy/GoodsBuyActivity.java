@@ -15,6 +15,7 @@ import com.example.uncontact.Adapter.GoodsBuyAdapter;
 import com.example.uncontact.Adapter.RestaurantAdapter;
 import com.example.uncontact.MainActivity;
 import com.example.uncontact.Model.GoodsBuyItem;
+import com.example.uncontact.Mypage.mypage;
 import com.example.uncontact.R;
 import com.example.uncontact.Res.RestaurantActivity;
 import com.example.uncontact.Res.RestaurantDetailActivity;
@@ -28,7 +29,7 @@ public class GoodsBuyActivity extends AppCompatActivity implements View.OnClickL
     private RecyclerView recyclerView;
     private ArrayList<GoodsBuyItem> list;
     private GoodsBuyAdapter adapter;
-    private TextView btnGoosBuyRecomm,  btnGoodsBuyTravel,  tvGoodsBuyRes, tvGoodsBuyStay, tvGoodsBuyRide;
+    private TextView btnGoosBuyRecomm,  btnGoodsBuyTravel,  tvGoodsBuyRes, tvGoodsBuyStay, tvGoodsBuyRide,btnGoodsBuyMypageSend;
 
     RecyclerView.LayoutManager mLayoutManager;
     String TAG = "GoodsBuyActivity";
@@ -39,6 +40,7 @@ public class GoodsBuyActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_goods_buy);
 
         btnGoosBuyRecomm = findViewById(R.id.btn_goos_buy_recomm);
+        btnGoodsBuyMypageSend = findViewById(R.id.btn_goods_buy_mypageSend);
         tvGoodsBuyRes = findViewById(R.id.tv_goods_buy_res);
         tvGoodsBuyStay = findViewById(R.id.tv_goods_buy_stay);
         tvGoodsBuyRide = findViewById(R.id.tv_goods_buy_ride);
@@ -58,6 +60,7 @@ public class GoodsBuyActivity extends AppCompatActivity implements View.OnClickL
 
         //클릭리스너
         btnGoosBuyRecomm.setOnClickListener(this);
+        btnGoodsBuyMypageSend.setOnClickListener(this);
         tvGoodsBuyRes.setOnClickListener(this);
         tvGoodsBuyStay.setOnClickListener(this);
         tvGoodsBuyRide.setOnClickListener(this);
@@ -98,6 +101,12 @@ public class GoodsBuyActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btn_goos_buy_recomm:
                 Intent intentRec =  new Intent(GoodsBuyActivity.this, MainActivity.class);
                 startActivity(intentRec);
+                break;
+
+                //마이페이지
+            case R.id.btn_goods_buy_mypageSend:
+                Intent intentMyPage =  new Intent(GoodsBuyActivity.this, mypage.class);
+                startActivity(intentMyPage);
                 break;
 
             //드슈

@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="280sp"
             android:id="@+id/res_cart_list_recyclerview"
-            tools:listitem="@layout/item_res_pay" />
+            tools:listitem="@layout/item_res_cart" />
 
 
     </LinearLayout>

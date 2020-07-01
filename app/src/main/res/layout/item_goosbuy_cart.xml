@@ -14,17 +14,17 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/item_tv_res_pay_title"
+            android:id="@+id/item_tv_goodsbuy_cart_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="메뉴이름"
+            android:text="기념품이름"
             android:textColor="#000"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/item_tv_res_pay_price"
+            android:id="@+id/item_tv_goodsbuy_cart_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10000"
@@ -42,7 +42,7 @@
             />
 
         <TextView
-            android:id="@+id/item_tv_res_pay_delete"
+            android:id="@+id/item_tv_goodsbuy_cart_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -69,7 +69,7 @@
 
 
             <TextView
-                android:id="@+id/item_tv_res_pay_total_price"
+                android:id="@+id/item_tv_goodsbuy_cart_total_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -81,20 +81,20 @@
                 android:id="@+id/textView110"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingRight="30sp"
+                android:paddingRight="20sp"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:text="원" />
 
             <ImageView
-                android:id="@+id/item_res_pay_minus"
+                android:id="@+id/item_goodsbuy_cart_minus"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/ic_minus" />
 
             <TextView
-                android:id="@+id/item_res_pay_count_num"
+                android:id="@+id/item_goodsbuy_cart_count_num"
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -102,7 +102,7 @@
                 android:text="1" />
 
             <ImageView
-                android:id="@+id/item_res_pay_plus"
+                android:id="@+id/item_goodsbuy_cart_plus"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/ic_add" />
