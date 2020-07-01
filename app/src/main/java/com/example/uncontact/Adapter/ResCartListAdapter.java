@@ -42,7 +42,7 @@ public class ResCartListAdapter extends RecyclerView.Adapter<ResCartListAdapter.
     public ResCartListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.item_res_pay, parent, false);
+        View view = inflater.inflate(R.layout.item_res_cart, parent, false);
         return new ViewHolder(view);
     }
 
@@ -52,18 +52,18 @@ public class ResCartListAdapter extends RecyclerView.Adapter<ResCartListAdapter.
         ResCartItem item = list.get(position);
 
         holder.itemTvResPayTitle.setText(item.getItemTvResPayTitle());
-        holder.itemTvResPayPrice.setText(item.getItemTvResPayPrice());
+        holder.itemTvResPayPrice.setText(String.valueOf(item.getItemTvResPayPrice()));
         holder.itemTvResPayDelete.setText(item.getItemTvResPayDelete());
-        holder.itemTvResPayTotalPrice.setText(item.getItemTvResPayTotalPrice());
+        holder.itemTvResPayTotalPrice.setText(String.valueOf(item.getItemTvResPayTotalPrice()));
         holder.itemResPayMinus.setImageResource(item.getItemResPayMinus());
-        holder.itemResPayCountNum.setText(item.getItemResPayCountNum());
+        holder.itemResPayCountNum.setText(String.valueOf(item.getItemResPayCountNum()));
         holder.itemResPayPlus.setImageResource(item.getItemResPayPlus());
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

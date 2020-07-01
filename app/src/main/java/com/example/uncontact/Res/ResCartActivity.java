@@ -68,13 +68,14 @@ public class ResCartActivity extends AppCompatActivity implements View.OnClickLi
 
         ArrayList<ResCartItem> list = new ArrayList<>();
         list.add(new ResCartItem("짜장면",10000,"삭제",10000,R.drawable.ic_minus,10000,R.drawable.ic_add));
-//        list.add(new ResCartItem("짜장면",10000,"삭제",10000,R.drawable.ic_minus,10000,R.drawable.ic_add));
-//        list.add(new ResCartItem("짜장면",10000,"삭제",10000,R.drawable.ic_minus,10000,R.drawable.ic_add));
+        list.add(new ResCartItem("짜장면",10000,"삭제",10000,R.drawable.ic_minus,10000,R.drawable.ic_add));
+        list.add(new ResCartItem("짜장면",10000,"삭제",10000,R.drawable.ic_minus,10000,R.drawable.ic_add));
 //        list.add(new ResCartItem("짜장면",10000,"삭제",10000,R.drawable.ic_minus,10000,R.drawable.ic_add));
 //        list.add(new ResCartItem("짜장면",10000,"삭제",10000,R.drawable.ic_minus,10000,R.drawable.ic_add));
 
         adapter = new ResCartListAdapter(list);
         recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
 
         //어댑터클릭리스너

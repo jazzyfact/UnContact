@@ -15,6 +15,7 @@ import com.example.uncontact.Adapter.RestaurantAdapter;
 import com.example.uncontact.GoodsBuy.GoodsBuyActivity;
 import com.example.uncontact.MainActivity;
 import com.example.uncontact.Model.RestaurantItem;
+import com.example.uncontact.Mypage.mypage;
 import com.example.uncontact.R;
 import com.example.uncontact.Ride.RideActivity;
 import com.example.uncontact.Stay.StayActivity;
@@ -26,7 +27,7 @@ public class RestaurantActivity extends AppCompatActivity implements View.OnClic
     private RecyclerView recyclerView;
     private ArrayList<RestaurantItem> list;
     private RestaurantAdapter adapter;
-    private TextView tvBtnRestaur, btRecommendation,tvBtnBuy, tvBtnStay, tvBtnRide;
+    private TextView tvBtnRestaur, btRecommendation,tvBtnBuy, tvBtnStay, tvBtnRide, btnResMypageSend;
     RecyclerView.LayoutManager mLayoutManager;
     String TAG = "RestaurantActivity";
 
@@ -37,10 +38,14 @@ public class RestaurantActivity extends AppCompatActivity implements View.OnClic
 
 
         btRecommendation = findViewById(R.id.btRecommendation);
+        btnResMypageSend = findViewById(R.id.btn_res_mypageSend);
+
         tvBtnRestaur = findViewById(R.id.tv_res);
         tvBtnBuy = findViewById(R.id.tv_buy);
         tvBtnStay = findViewById(R.id.tv_stay);
         tvBtnRide = findViewById(R.id.tv_ride);
+
+
 
         //리사이클러뷰 set
         recyclerView = findViewById(R.id.res_recyclerview);
@@ -53,6 +58,7 @@ public class RestaurantActivity extends AppCompatActivity implements View.OnClic
 
         //클릭이벤트
         btRecommendation.setOnClickListener(this);
+        btnResMypageSend.setOnClickListener(this);
         tvBtnBuy.setOnClickListener(this);
         tvBtnStay.setOnClickListener(this);
         tvBtnRide.setOnClickListener(this);
@@ -100,6 +106,12 @@ public class RestaurantActivity extends AppCompatActivity implements View.OnClic
                 Intent intentRec =  new Intent(RestaurantActivity.this, MainActivity.class);
                 startActivity(intentRec);
                 break;
+
+            case R.id.btn_res_mypageSend:
+                Intent intentMyPage =  new Intent(RestaurantActivity.this, mypage.class);
+                startActivity(intentMyPage);
+                break;
+
             //사슈
             case R.id.tv_buy:
                 Intent intentBuy = new Intent(RestaurantActivity.this, GoodsBuyActivity.class);

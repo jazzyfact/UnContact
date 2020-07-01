@@ -16,6 +16,7 @@ import com.example.uncontact.Adapter.StayAdapter;
 import com.example.uncontact.GoodsBuy.GoodsBuyActivity;
 import com.example.uncontact.MainActivity;
 import com.example.uncontact.Model.StayItem;
+import com.example.uncontact.Mypage.mypage;
 import com.example.uncontact.R;
 import com.example.uncontact.Res.RestaurantActivity;
 import com.example.uncontact.Ride.RideActivity;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 public class StayActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private TextView tvBtnStayRes, tvBtnStayGoods,  tvBtnStayRide, tvBtnStayRecomm;
+    private TextView tvBtnStayRes, tvBtnStayGoods,  tvBtnStayRide, tvBtnStayRecomm,tvBtnStayMypageSend;
     private RecyclerView recyclerView;
     private StayAdapter adapter;
 
@@ -41,6 +42,7 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
 
 
         tvBtnStayRecomm = findViewById(R.id.tv_btn_stay_recomm);
+        tvBtnStayMypageSend =findViewById(R.id.tv_btn_stay_mypageSend);
         tvBtnStayRes = findViewById(R.id.tv_btn_stay_res);
         tvBtnStayGoods =findViewById(R.id.tv_btn_stay_goods);
         tvBtnStayRide = findViewById(R.id.tv_btn_stay_ride);
@@ -53,6 +55,7 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
         
         //클릭이벤트
         tvBtnStayRecomm.setOnClickListener(this);
+        tvBtnStayMypageSend.setOnClickListener(this);
         tvBtnStayRes.setOnClickListener(this);
         tvBtnStayGoods.setOnClickListener(this);
         tvBtnStayRide.setOnClickListener(this);
@@ -95,7 +98,11 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentRec = new Intent(StayActivity.this, MainActivity.class);
                 startActivity(intentRec);
                 break;
-
+            //마이페이지
+            case R.id.tv_btn_stay_mypageSend:
+                Intent intentMyPage =  new Intent(StayActivity.this, mypage.class);
+                startActivity(intentMyPage);
+                break;
 
             //드슈
             case R.id.tv_btn_stay_res:

@@ -15,6 +15,7 @@ import com.example.uncontact.Adapter.RideAdapter;
 import com.example.uncontact.GoodsBuy.GoodsBuyActivity;
 import com.example.uncontact.MainActivity;
 import com.example.uncontact.Model.RideItem;
+import com.example.uncontact.Mypage.mypage;
 import com.example.uncontact.R;
 import com.example.uncontact.Res.RestaurantActivity;
 import com.example.uncontact.Stay.StayActivity;
@@ -30,7 +31,7 @@ public class RideActivity extends AppCompatActivity implements View.OnClickListe
     RecyclerView.LayoutManager mLayoutManager;
     String TAG = "RideActivity";
 
-    private TextView tvBtnRestaur, btnRideRravel, btnRideRecomme,tvBtnBuy, tvBtnStay, tvBtnRide;
+    private TextView tvBtnRestaur, btnRideRravel, btnRideRecomme,tvBtnBuy, tvBtnStay, tvBtnRide, btnRideMypageSend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class RideActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_ride);
 
         btnRideRecomme = findViewById(R.id.btn_ride_recomme);
+        btnRideMypageSend = findViewById(R.id.btn_ride_mypageSend);
 //        btnRideRravel = findViewById(R.id.btn_ride_travel);
         tvBtnRestaur = findViewById(R.id.tv_ride_res);
         tvBtnBuy = findViewById(R.id.tv_ride_buy);
@@ -55,6 +57,7 @@ public class RideActivity extends AppCompatActivity implements View.OnClickListe
 
         //클릭이벤트
         btnRideRecomme.setOnClickListener(this);
+        btnRideMypageSend.setOnClickListener(this);
         tvBtnRestaur.setOnClickListener(this);
         tvBtnBuy.setOnClickListener(this);
         tvBtnStay.setOnClickListener(this);
@@ -104,7 +107,11 @@ public class RideActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentRec = new Intent(RideActivity.this, MainActivity.class);
                 startActivity(intentRec);
                 break;
-
+            //마이페이지
+            case R.id.btn_ride_mypageSend:
+                Intent intentMyPage =  new Intent(RideActivity.this, mypage.class);
+                startActivity(intentMyPage);
+                break;
 
             //드슈
             case R.id.tv_ride_res:
