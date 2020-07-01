@@ -134,7 +134,11 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
             @Override
             public void onClick(View v) {
                 // 큐알코드 스캔 후 스탬프 레이아웃으로
-                startActivity(new Intent(getApplication(), stamp.class));
+
+                Intent intent = new Intent(MainActivity.this, QrCodeStampActivity.class);
+                startActivity(intent);
+
+//                startActivity(new Intent(getApplication(), stamp.class));
             }
         });
 
