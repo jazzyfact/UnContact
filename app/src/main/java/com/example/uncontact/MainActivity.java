@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.uncontact.MainBottom.bottom_sheet;
 import com.example.uncontact.Mypage.mypage;
 import com.example.uncontact.Res.RestaurantActivity;
+import com.example.uncontact.alarm.alarm;
 
 import java.util.ArrayList;
 
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
 
     // 스탬프 관련
     ImageView iv_stamImage;
+
+    ImageView bt_alarm;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -150,6 +153,14 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
             }
         });
         // 마이페이지 끝 ------------------------------------------------------------------------------
+
+        bt_alarm = findViewById(R.id.bt_alarm);
+        bt_alarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplication(), alarm.class));
+            }
+        });
 
     }
 
