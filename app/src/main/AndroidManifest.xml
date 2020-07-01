@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Mypage.mypage_booking"></activity>
+        <activity android:name=".alarm.alarm"></activity>
+        <activity android:name=".Mypage.mypage_booking" />
         <activity android:name=".Mypage.mypage" />
         <activity android:name=".Stay.StayPayCompleteActivity" />
         <activity android:name=".Stay.StayPayActivity" />
