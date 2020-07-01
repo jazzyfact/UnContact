@@ -53,11 +53,11 @@ public class GoodsCartListAdapter extends RecyclerView.Adapter<GoodsCartListAdap
         GoodsCartItem item = list.get(position);
 
         holder.itemTvGoodsBuyCartTitle.setText(item.getItemTvGoodsBuyCartTitle());
-        holder.itemTvGoodsBuyCartPrice.setText(item.getItemTvGoodsBuyCartPrice());
+        holder.itemTvGoodsBuyCartPrice.setText(String.valueOf(item.getItemTvGoodsBuyCartPrice()));
         holder.itemTvGoodsBuyCartDelete.setText(item.getItemTvGoodsBuyCartDelete());
-        holder.itemTvGoodsBuyCartPrice.setText(item.getItemTvGoodsBuyCartPrice());
+        holder.itemTvGoodsBuyCartTotalPrice.setText(String.valueOf(item.getItemTvGoodsBuyCartTotalPrice()));
         holder.itemGoodsBuyCartMinus.setImageResource(item.getItemGoodsBuyCartMinus());
-        holder.itemGoodsBuyCartCountNum.setText(item.getItemGoodsBuyCartCountNum());
+        holder.itemGoodsBuyCartCountNum.setText(String.valueOf(item.getItemGoodsBuyCartCountNum()));
         holder.itemGoodsBuyCartPlus.setImageResource(item.getItemGoodsBuyCartPlus());
 
 
