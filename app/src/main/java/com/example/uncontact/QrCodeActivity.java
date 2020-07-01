@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.uncontact.MainBottom.bottom_sheet;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -50,6 +51,16 @@ public class QrCodeActivity extends AppCompatActivity {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
 
                 String qrCodeGet =  result.getContents();
+
+                Intent intent = new Intent(QrCodeActivity.this, MainActivity.class);
+                intent.putExtra("qrcode",qrCodeGet);
+                startActivity(intent);
+
+                MainActivity.qrcode = "확인";
+
+//                bottom_sheet bottomSheet = new bottom_sheet();
+//                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
+
                 Log.d("확인","큐알코드 값" + qrCodeGet);
                 // todo
             }

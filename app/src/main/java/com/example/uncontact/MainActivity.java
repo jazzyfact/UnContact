@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
     TextView tv_qrCode;
     TextView tv_barCode;
 
+    public static String qrcode;
+
 
     Button btBuying;
     TextView btTravel;
@@ -59,22 +61,37 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
 
     ImageView bt_alarm;
 
+    Intent intent;
+    String TAG = "MainActivity";
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        if (qrcode != null) {
+            //큐알코드 받아오기------------------------------
+//            qrcode = intent.getStringExtra("qrcode");
+            Log.i(TAG, "큐알코드" + qrcode);
+
+            bottom_sheet bottomSheet = new bottom_sheet();
+            bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
+
+        }
+
+
         // 메인 리사이클러뷰 시작 -----------------------------------------------------------------------
 
         addMainItemClass = new ArrayList<>();
-        addMainItemClass.add(new MainReData("image1","카데고리","타이틀1","내용1"));
-        addMainItemClass.add(new MainReData("image1","카데고리","타이틀2","내용2"));
-        addMainItemClass.add(new MainReData("image1","카데고리","타이틀3","내용3"));
-        addMainItemClass.add(new MainReData("image1","카데고리","타이틀4","내용4"));
+        addMainItemClass.add(new MainReData("image1", "카데고리", "타이틀1", "내용1"));
+        addMainItemClass.add(new MainReData("image1", "카데고리", "타이틀2", "내용2"));
+        addMainItemClass.add(new MainReData("image1", "카데고리", "타이틀3", "내용3"));
+        addMainItemClass.add(new MainReData("image1", "카데고리", "타이틀4", "내용4"));
         re_recmdRecyclerview = findViewById(R.id.re_recmdRecyclerview);
         re_recmdRecyclerview.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL));
-        re_recmdRecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(),2)); // 레이아웃 메니저
+        re_recmdRecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2)); // 레이아웃 메니저
         // 장바구니 어레이리스트임
         // 이거를 buying class로 보내서 해당하는 사람들이 결제한 리스트가 뭔지 알아야한다.
         mainReAdapter = new MainReAdapter(addMainItemClass); // 어댑터에 리스트 붙이고
@@ -103,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         btTravel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast myToast = Toast.makeText(getApplicationContext(),"눌렀다", Toast.LENGTH_SHORT);
+                Toast myToast = Toast.makeText(getApplicationContext(), "눌렀다", Toast.LENGTH_SHORT);
                 myToast.show();
                 Intent travelIntent = new Intent(MainActivity.this, RestaurantActivity.class);
                 startActivity(travelIntent);
@@ -129,8 +146,12 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         tv_qrCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bottom_sheet bottomSheet = new bottom_sheet();
-                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
+                Intent intent = new Intent(MainActivity.this, QrCodeActivity.class);
+                startActivity(intent);
+
+
+//                bottom_sheet bottomSheet = new bottom_sheet();
+//                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
             }
         });
 
@@ -145,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         // 바텀 네비게이션 끝 --------------------------------------------------------------------------
 
         // 마이페이지 시작 ----------------------------------------------------------------------------
-        bt_mypageSend  = findViewById(R.id.bt_mypageSend);
+        bt_mypageSend = findViewById(R.id.bt_mypageSend);
         bt_mypageSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -168,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
     public void onClick_request(View v) {
         // 결제호출
         BootUser bootUser = new BootUser().setPhone("010-1234-5678");
-        BootExtra bootExtra = new BootExtra().setQuotas(new int[] {0,2,3});
+        BootExtra bootExtra = new BootExtra().setQuotas(new int[]{0, 2, 3});
 
         Bootpay.init(getFragmentManager())
                 .setApplicationId("5ef8c37e4f74b40026f2b8f9") // 해당 프로젝트(안드로이드)의 application id 값
@@ -198,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
                     public void onDone(@Nullable String message) {
                         Log.d("done", message);
 
-                       //  결제가 완료되는  부분
+                        //  결제가 완료되는  부분
 
                         Toast.makeText(getApplicationContext(), "결제가 완료되었습니다.", Toast.LENGTH_SHORT).show();
 
