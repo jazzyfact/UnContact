@@ -54,10 +54,9 @@ public class QrCodeStampActivity extends AppCompatActivity {
                 MainActivity.qrcode = "스탬프";
                 if(MainActivity.stampNumber < 8){
                     MainActivity.stampNumber++;
-                } else {
+                } else if (MainActivity.stampNumber == 8) {
                     MainActivity.stampNumber = 0;
                 }
-
 
 //                bottom_sheet bottomSheet = new bottom_sheet();
 //                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
@@ -68,9 +67,6 @@ public class QrCodeStampActivity extends AppCompatActivity {
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
-
-
-
 
 
     }
