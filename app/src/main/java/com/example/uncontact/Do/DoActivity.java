@@ -127,7 +127,7 @@ public class DoActivity extends AppCompatActivity implements DoAdapter.OnItemCli
         Log.i(TAG, "리사이클러뷰");
 
         list = new ArrayList<>();
-        list.add(new DoItem(R.drawable.do1, "장태산자연휴양림", "울창한 메타세콰이어 숲에서 즐기는 산림욕과 캠핌\n"));
+        list.add(new DoItem(R.drawable.do1, "장태산자연휴양림", "울창한 메타세콰이어 숲에서 즐기는 산림욕과 캠핑"));
         list.add(new DoItem(R.drawable.do2, "한밭수목원", "중부권 최대규모의 인공수목원에서 즐기는 다양한 자연생태 체험"));
         list.add(new DoItem(R.drawable.do3, "만인산 자연휴양림", "종합휴양지에서 즐기는 야영, 피크닉, 산림욕 등"));
         list.add(new DoItem(R.drawable.do4, "뿌리공원", "224개 성씨 유래가 기록된 조각품, 자연관찰로, 수목원, 산림욕장 등"));
