@@ -56,7 +56,7 @@ public class QrCodeActivity extends AppCompatActivity {
                 intent.putExtra("qrcode",qrCodeGet);
                 startActivity(intent);
 
-                MainActivity.qrcode = "확인";
+                MainActivity.qrcode = "결제";
 
 //                bottom_sheet bottomSheet = new bottom_sheet();
 //                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
