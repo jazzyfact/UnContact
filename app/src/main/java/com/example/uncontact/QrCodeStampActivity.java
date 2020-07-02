@@ -51,7 +51,13 @@ public class QrCodeStampActivity extends AppCompatActivity {
                 intent.putExtra("qrcode",qrCodeGet);
                 startActivity(intent);
 
-                MainActivity.qrcode = "확인";
+                MainActivity.qrcode = "스탬프";
+                if(MainActivity.stampNumber < 8){
+                    MainActivity.stampNumber++;
+                } else {
+                    MainActivity.stampNumber = 0;
+                }
+
 
 //                bottom_sheet bottomSheet = new bottom_sheet();
 //                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
