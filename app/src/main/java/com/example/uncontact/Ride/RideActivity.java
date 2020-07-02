@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.uncontact.Adapter.RestaurantAdapter;
 import com.example.uncontact.Adapter.RideAdapter;
+import com.example.uncontact.Do.DoActivity;
+import com.example.uncontact.Do.DoDetailActivity;
 import com.example.uncontact.GoodsBuy.GoodsBuyActivity;
 import com.example.uncontact.MainActivity;
 import com.example.uncontact.Model.RideItem;
@@ -22,16 +24,17 @@ import com.example.uncontact.Stay.StayActivity;
 
 import java.util.ArrayList;
 
-public class RideActivity extends AppCompatActivity implements RideAdapter.OnItemClickListener {
+public class RideActivity extends AppCompatActivity implements RideAdapter.OnItemClickListener, View.OnClickListener {
 
     private RecyclerView recyclerView;
     private ArrayList<RideItem> list;
     private RideAdapter adapter;
+    private RideItem rideItem;
 
     RecyclerView.LayoutManager mLayoutManager;
     String TAG = "RideActivity";
 
-    private TextView tvBtnRestaur, btnRideRravel, btnRideRecomme,tvBtnBuy, tvBtnStay, tvBtnRide, btnRideMypageSend;
+    private TextView tvBtnRestaur, btnRideRravel, btnRideRecomme,tvBtnBuy, tvBtnStay, tvBtnRide, btnRideMypageSend, tvBtnRideDo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,7 @@ public class RideActivity extends AppCompatActivity implements RideAdapter.OnIte
         btnRideMypageSend = findViewById(R.id.btn_ride_mypageSend);
 //        btnRideRravel = findViewById(R.id.btn_ride_travel);
         tvBtnRestaur = findViewById(R.id.tv_ride_res);
+        tvBtnRideDo = findViewById(R.id.tv_ride_do);
         tvBtnBuy = findViewById(R.id.tv_ride_buy);
         tvBtnStay = findViewById(R.id.tv_ride_stay);
         tvBtnRide = findViewById(R.id.tv_ride_ride);
@@ -56,12 +60,12 @@ public class RideActivity extends AppCompatActivity implements RideAdapter.OnIte
 
 
         //클릭이벤트
-//        btnRideRecomme.setOnClickListener(this);
-//        btnRideMypageSend.setOnClickListener(this);
-//        tvBtnRestaur.setOnClickListener(this);
-//        tvBtnBuy.setOnClickListener(this);
-//        tvBtnStay.setOnClickListener(this);
-////        tvBtnRide.setOnClickListener(this);
+        btnRideRecomme.setOnClickListener(this);
+        btnRideMypageSend.setOnClickListener(this);
+        tvBtnRestaur.setOnClickListener(this);
+        tvBtnBuy.setOnClickListener(this);
+        tvBtnStay.setOnClickListener(this);
+        tvBtnRideDo.setOnClickListener(this);
 
 
 //        btRecommendation.setOnClickListener(this);
@@ -73,15 +77,10 @@ public class RideActivity extends AppCompatActivity implements RideAdapter.OnIte
         //리사이클러뷰 아이템 불러오기
         getData();
 
-        //클릭이벤트
-        getClick();
 
     }
 
-    private void getClick() {
 
-
-    }
 
     private void getData() {
 
@@ -92,63 +91,77 @@ public class RideActivity extends AppCompatActivity implements RideAdapter.OnIte
 
         adapter = new RideAdapter(list);
         recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(RideActivity.this);
 
 
-        //어댑터클릭리스너
-//        adapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View v, int position) {
-//                // 클릭했을때 원하는데로 처리해주는 부분
-//                Toast myToast = Toast.makeText(getApplicationContext(), "포지션 눌렀다" + position, Toast.LENGTH_SHORT);
-//                myToast.show();
-//                Intent intentDetail = new Intent(RideActivity.this, RideCartActivity.class);
-//                startActivity(intentDetail);
-//            }
-//        });
     }
 
 //    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            //추천
-//            case R.id.btn_ride_recomme:
-//                Intent intentRec = new Intent(RideActivity.this, MainActivity.class);
-//                startActivity(intentRec);
-//                break;
-//            //마이페이지
-//            case R.id.btn_ride_mypageSend:
-//                Intent intentMyPage =  new Intent(RideActivity.this, mypage.class);
-//                startActivity(intentMyPage);
-//                break;
-//
-//            //드슈
-//            case R.id.tv_ride_res:
-//                Intent intentRes = new Intent(RideActivity.this, RestaurantActivity.class);
-//                startActivity(intentRes);
-//                break;
-//
-//
-//            //사슈
-//            case R.id.tv_ride_buy:
-//                Intent intentBuy = new Intent(RideActivity.this, GoodsBuyActivity.class);
-//                startActivity(intentBuy);
-//                break;
-//            //자슈
-//            case R.id.tv_ride_stay:
-//                Intent intentStay = new Intent(RideActivity.this, StayActivity.class);
-//                startActivity(intentStay);
-//                break;
-//            //타슈
-////            case R.id.tv_ride:
-////                Intent intentRide = new Intent(RideActivity.this, RideActivity.class);
-////                startActivity(intentRide);
-////                break;
-//        }
-//    }
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+            //추천
+            case R.id.btn_ride_recomme:
+                Intent intentRec = new Intent(RideActivity.this, MainActivity.class);
+                startActivity(intentRec);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
+                break;
+            //마이페이지
+            case R.id.btn_ride_mypageSend:
+                Intent intentMyPage =  new Intent(RideActivity.this, mypage.class);
+                startActivity(intentMyPage);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
+                break;
+
+            //드슈
+            case R.id.tv_ride_res:
+                Intent intentRes = new Intent(RideActivity.this, RestaurantActivity.class);
+                startActivity(intentRes);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
+                break;
+
+
+            //사슈
+            case R.id.tv_ride_buy:
+                Intent intentBuy = new Intent(RideActivity.this, GoodsBuyActivity.class);
+                startActivity(intentBuy);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
+                break;
+            //자슈
+            case R.id.tv_ride_stay:
+                Intent intentStay = new Intent(RideActivity.this, StayActivity.class);
+                startActivity(intentStay);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
+                break;
+            //하슈
+            case R.id.tv_ride_do:
+                Intent intentRide = new Intent(RideActivity.this, DoActivity.class);
+                startActivity(intentRide);
+                break;
+        }
+    }
+
+
 
     @Override
-    public void onItemClick(View v, int position) {
+    public void onItemClick(int position) {
+        Toast myToast = Toast.makeText(getApplicationContext(), "하슈 아이템 눌렀다", Toast.LENGTH_SHORT);
+        myToast.show();
+        Intent intentRide = new Intent(RideActivity.this, RideCartActivity.class);
 
+        rideItem   = list.get(position);
 
+        intentRide.putExtra("image",rideItem.getRideImage());
+        intentRide.putExtra("title",rideItem.getRideTitle());
+        intentRide.putExtra("intro",rideItem.getRideIntro());
+
+        startActivity(intentRide);
+        //애니메이션제거
+        overridePendingTransition(0, 0);
     }
 }

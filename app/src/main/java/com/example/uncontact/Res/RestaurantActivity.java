@@ -79,9 +79,9 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
             @Override
             public void onClick(View v) {
                 Intent intentRec =  new Intent(RestaurantActivity.this, MainActivity.class);
-                //애니메이션 제거
-                intentRec.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentRec);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -89,9 +89,9 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
             @Override
             public void onClick(View v) {
                 Intent intentDo =  new Intent(RestaurantActivity.this, DoActivity.class);
-                //애니메이션 제거
-                intentDo.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentDo);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -100,9 +100,9 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
             @Override
             public void onClick(View v) {
                 Intent intentMyPage =  new Intent(RestaurantActivity.this, mypage.class);
-                //애니메이션 제거
-                intentMyPage.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentMyPage);
+                //애니메이션 제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -110,9 +110,9 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
             @Override
             public void onClick(View v) {
                 Intent intentBuy = new Intent(RestaurantActivity.this, GoodsBuyActivity.class);
-                //애니메이션 제거
-                intentBuy.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentBuy);
+                //애니메이션 제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -121,9 +121,9 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
             @Override
             public void onClick(View v) {
                 Intent intentStay = new Intent(RestaurantActivity.this, StayActivity.class);
-                //애니메이션 제거
-                intentStay.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentStay);
+                //애니메이션 제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -131,9 +131,9 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
             @Override
             public void onClick(View v) {
                 Intent intentRide = new Intent(RestaurantActivity.this, RideActivity.class);
-                //애니메이션 제거
-                intentRide.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentRide);
+                //애니메이션 제거
+                overridePendingTransition(0, 0);
             }
         });
 

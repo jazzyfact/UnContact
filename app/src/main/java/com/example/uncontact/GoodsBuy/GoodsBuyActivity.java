@@ -75,6 +75,8 @@ public class GoodsBuyActivity extends AppCompatActivity implements GoodsBuyAdapt
             @Override
             public void onClick(View v) {
                 Intent intentRec =  new Intent(GoodsBuyActivity.this, MainActivity.class);
+                //애니메이션 제거
+                intentRec.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentRec);
             }
         });
@@ -83,6 +85,8 @@ public class GoodsBuyActivity extends AppCompatActivity implements GoodsBuyAdapt
             @Override
             public void onClick(View v) {
                 Intent intentMyPage =  new Intent(GoodsBuyActivity.this, mypage.class);
+                //애니메이션 제거
+                intentMyPage.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentMyPage);
             }
         });
@@ -91,6 +95,8 @@ public class GoodsBuyActivity extends AppCompatActivity implements GoodsBuyAdapt
             @Override
             public void onClick(View v) {
                 Intent intentRes = new Intent(GoodsBuyActivity.this, RestaurantActivity.class);
+                //애니메이션 제거
+                intentRes.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentRes);
             }
         });
@@ -99,6 +105,8 @@ public class GoodsBuyActivity extends AppCompatActivity implements GoodsBuyAdapt
             @Override
             public void onClick(View v) {
                 Intent intentRes = new Intent(GoodsBuyActivity.this, DoActivity.class);
+                //애니메이션 제거
+                intentRes.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentRes);
             }
         });
@@ -107,6 +115,8 @@ public class GoodsBuyActivity extends AppCompatActivity implements GoodsBuyAdapt
             @Override
             public void onClick(View v) {
                 Intent intentStay = new Intent(GoodsBuyActivity.this, StayActivity.class);
+                //애니메이션 제거
+                intentStay.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentStay);
             }
         });
@@ -116,6 +126,8 @@ public class GoodsBuyActivity extends AppCompatActivity implements GoodsBuyAdapt
             @Override
             public void onClick(View v) {
                 Intent intentRide = new Intent(GoodsBuyActivity.this, RideActivity.class);
+                //애니메이션 제거
+                intentRide.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentRide);
             }
         });

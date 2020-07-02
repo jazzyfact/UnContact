@@ -122,15 +122,15 @@ public class RestaurantDetailActivity extends AppCompatActivity {
 //            resMenuItemArrayList.add(new ResMenuItem("중식",R.drawable.meat,"볶음밥","달달한맛"));
 //        }
 
-        resMenuItemArrayList.add(new ResMenuItem("한식",R.drawable.meat,"차돌박이","감칠맛"));
-        resMenuItemArrayList.add(new ResMenuItem("한식",R.drawable.meat,"부채살","담백한맛"));
-        resMenuItemArrayList.add(new ResMenuItem("한식",R.drawable.meat,"황제갈비살","고소한맛"));
-        resMenuItemArrayList.add(new ResMenuItem("한식",R.drawable.meat,"살치살","입안에서녹는맛"));
-        resMenuItemArrayList.add(new ResMenuItem("한식",R.drawable.meat,"차돌된장찌개","구수한맛"));
-        resMenuItemArrayList.add(new ResMenuItem("중식",R.drawable.meat,"짜장면","달달한맛"));
-        resMenuItemArrayList.add(new ResMenuItem("중식",R.drawable.meat,"짬뽕","달달한맛"));
-        resMenuItemArrayList.add(new ResMenuItem("중식",R.drawable.meat,"탕수육","달달한맛"));
-        resMenuItemArrayList.add(new ResMenuItem("중식",R.drawable.meat,"볶음밥","달달한맛"));
+        resMenuItemArrayList.add(new ResMenuItem("한식",R.drawable.meat1,"차돌박이","감칠맛"));
+        resMenuItemArrayList.add(new ResMenuItem("한식",R.drawable.meat2,"부채살","담백한맛"));
+        resMenuItemArrayList.add(new ResMenuItem("한식",R.drawable.meat3,"황제갈비살","고소한맛"));
+        resMenuItemArrayList.add(new ResMenuItem("한식",R.drawable.meat4,"살치살","입안에서녹는맛"));
+        resMenuItemArrayList.add(new ResMenuItem("한식",R.drawable.soy,"차돌된장찌개","구수한맛"));
+//        resMenuItemArrayList.add(new ResMenuItem("중식",R.drawable.meat,"짜장면","달달한맛"));
+//        resMenuItemArrayList.add(new ResMenuItem("중식",R.drawable.meat,"짬뽕","달달한맛"));
+//        resMenuItemArrayList.add(new ResMenuItem("중식",R.drawable.meat,"탕수육","달달한맛"));
+//        resMenuItemArrayList.add(new ResMenuItem("중식",R.drawable.meat,"볶음밥","달달한맛"));
 
         adapter = new RestaurantMenuAdapter(resMenuItemArrayList);
         recyclerView.setAdapter(adapter);

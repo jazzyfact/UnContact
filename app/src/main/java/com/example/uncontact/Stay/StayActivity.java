@@ -106,17 +106,23 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tv_btn_stay_recomm:
                 Intent intentRec = new Intent(StayActivity.this, MainActivity.class);
                 startActivity(intentRec);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
                 break;
             //마이페이지
             case R.id.tv_btn_stay_mypageSend:
                 Intent intentMyPage =  new Intent(StayActivity.this, mypage.class);
                 startActivity(intentMyPage);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
                 break;
 
             //드슈
             case R.id.tv_btn_stay_res:
                 Intent intentRes = new Intent(StayActivity.this, RestaurantActivity.class);
                 startActivity(intentRes);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
                 break;
 
 
@@ -124,11 +130,15 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tv_btn_stay_goods:
                 Intent intentBuy = new Intent(StayActivity.this, GoodsBuyActivity.class);
                 startActivity(intentBuy);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
                 break;
             //타슈
             case R.id.tv_btn_stay_ride:
                 Intent intentRide = new Intent(StayActivity.this, RideActivity.class);
                 startActivity(intentRide);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
                 break;
         }
     }
