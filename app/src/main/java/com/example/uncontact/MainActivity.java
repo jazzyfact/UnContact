@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.uncontact.Do.DoActivity;
+import com.example.uncontact.Do.DoDetailActivity;
 import com.example.uncontact.MainBottom.bottom_sheet;
 import com.example.uncontact.Mypage.mypage;
 import com.example.uncontact.Res.RestaurantActivity;
@@ -44,12 +46,13 @@ import kr.co.bootpay.listener.ReadyListener;
 import kr.co.bootpay.model.BootExtra;
 import kr.co.bootpay.model.BootUser;
 
-public class MainActivity extends AppCompatActivity implements bottom_sheet.BottomSheetListener {
+public class MainActivity extends AppCompatActivity implements bottom_sheet.BottomSheetListener, MainReAdapter.OnItemClickListener {
 
     // 리사이클러뷰 관련 설정
     RecyclerView re_recmdRecyclerview;
     MainReAdapter mainReAdapter;
     ArrayList<MainReData> addMainItemClass;
+    private MainReData mainReData;
 
     // 바텀 네비게이션
     TextView tv_qrCode;
@@ -117,13 +120,13 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         // 메인 리사이클러뷰 시작 -----------------------------------------------------------------------
 
         addMainItemClass = new ArrayList<>();
-        addMainItemClass.add(new MainReData("R.drawable.citytour", "볼거리", "대전 시티투어", "대전 핵심 관광지를 하나로!"));
-        addMainItemClass.add(new MainReData("R.drawable.toto", "축제", "대전 토토즐 페스티벌", "토요일 토요일은 즐거워!"));
-        addMainItemClass.add(new MainReData("R.drawable.tashu", "운동", "대전 시민 공용자전거", "원하는 장소에서 쉽게 대여하고, 사용후 편리하게 반납하는"));
-        addMainItemClass.add(new MainReData("R.drawable.deachung", "힐링", "대청호 오백리길", "걸으며 사색하는 그림 속 호수"));
-        addMainItemClass.add(new MainReData("R.drawable.manbal", "건강", "계족산 맨발축제", "숲속황톳길을 맨발로 걷거나 달리는 세계 유일의 맨발축제"));
-        addMainItemClass.add(new MainReData("R.drawable.onchun", "치유", "유성온천문화축제", "천년온천 유성의 천가지 즐거움!"));
-        addMainItemClass.add(new MainReData("R.drawable.untact", "휴식", "대전 언텍트 관광명소 추천", "코로나19로 쌓인 스트레스, 대전서 날려버려요!"));
+        addMainItemClass.add(new MainReData(R.drawable.citytour, "볼거리", "대전 시티투어", "대전 핵심 관광지를 하나로!"));
+        addMainItemClass.add(new MainReData(R.drawable.toto, "축제", "대전 토토즐 페스티벌", "토요일 토요일은 즐거워!"));
+        addMainItemClass.add(new MainReData(R.drawable.tashu, "운동", "대전 시민 공용자전거", "원하는 장소에서 쉽게 대여하고, 사용후 편리하게 반납하는"));
+        addMainItemClass.add(new MainReData(R.drawable.deachung, "힐링", "대청호 오백리길", "걸으며 사색하는 그림 속 호수"));
+        addMainItemClass.add(new MainReData(R.drawable.manbal, "건강", "계족산 맨발축제", "숲속황톳길을 맨발로 걷거나 달리는 세계 유일의 맨발축제"));
+        addMainItemClass.add(new MainReData(R.drawable.onchun, "치유", "유성온천문화축제", "천년온천 유성의 천가지 즐거움!"));
+        addMainItemClass.add(new MainReData(R.drawable.untact, "휴식", "대전 언텍트 관광명소 추천", "코로나19로 쌓인 스트레스, 대전서 날려버려요!"));
         re_recmdRecyclerview = findViewById(R.id.re_recmdRecyclerview);
         re_recmdRecyclerview.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL));
         re_recmdRecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2)); // 레이아웃 메니저
@@ -134,6 +137,10 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         mainReAdapter.notifyDataSetChanged();
 
         // 리사이클러뷰에 데이터 넣기
+
+        //어댑터 클릭리스너
+        mainReAdapter.setOnItemClickListener(MainActivity.this);
+
 
 
         // 메인 리사이클러뷰 시작 -----------------------------------------------------------------------
@@ -158,6 +165,8 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
                 Toast myToast = Toast.makeText(getApplicationContext(), "눌렀다", Toast.LENGTH_SHORT);
                 myToast.show();
                 Intent travelIntent = new Intent(MainActivity.this, RestaurantActivity.class);
+                //애니메이션 제거
+                travelIntent.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(travelIntent);
             }
         });
@@ -322,4 +331,28 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         Log.i("바텀시트 클릭함 ", "onButtonClicked: ");
     }
     // 부트페이 관련한 메소드 끝 -----------------------------------------------------------------------
+
+
+
+    // 축제 상세정보 화면으로 이동 시작 /////////////////////////////////////////////////////////////////
+    @Override
+    public void onItemClick(int position) {
+        Log.i(TAG,"리사이클러뷰 어댑터 클릭");
+        Toast myToast = Toast.makeText(getApplicationContext(), "축제 상세화면으로 이동합니다", Toast.LENGTH_SHORT);
+        myToast.show();
+
+
+        Intent intentMain = new Intent(MainActivity.this, MainDetailActivity.class);
+        mainReData = addMainItemClass.get(position);
+        intentMain.putExtra("image", mainReData.getMainReImage());
+        intentMain.putExtra("title", mainReData.getMainReTitle());
+        intentMain.putExtra("intro",mainReData.getMainReContent());
+        //애니메이션 제거
+        intentMain.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        Log.i(TAG,"이미지~~~" +mainReData.getMainReImage());
+        startActivity(intentMain);
+    }
+
+    //축체 상제 정보 화면 끝////////////////////////////////////////////////////////////////////////////
+
 }
