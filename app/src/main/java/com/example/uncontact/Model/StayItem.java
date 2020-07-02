@@ -7,11 +7,21 @@ public class StayItem {
     private int stayImage;
     private String stayTitle;
     private String stayIntro;
+    private int stayStar;
 
-    public StayItem(int stayImage, String stayTitle, String stayIntro) {
+    public StayItem(int stayImage, String stayTitle, String stayIntro, int stayStar) {
         this.stayImage = stayImage;
         this.stayTitle = stayTitle;
         this.stayIntro = stayIntro;
+        this.stayStar = stayStar;
+    }
+
+    public int getStayStar() {
+        return stayStar;
+    }
+
+    public void setStayStar(int stayStar) {
+        this.stayStar = stayStar;
     }
 
     public int getStayImage() {

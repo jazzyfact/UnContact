@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -83,11 +84,12 @@ public class RideActivity extends AppCompatActivity implements RideAdapter.OnIte
 
 
     private void getData() {
+        Log.i(TAG, "리사이클러뷰");
 
-        ArrayList<RideItem> list = new ArrayList<>();
-        list.add(new RideItem(R.drawable.bus, "교통 1일권", "지하철 버스 타슈 무제한 사용 가능"));
-        list.add(new RideItem(R.drawable.bus, "교통 3일권", "지하철 버스 타슈 무제한 사용 가능"));
-        list.add(new RideItem(R.drawable.bus, "교통 7일권", "지하철 버스 타슈 무제한 사용 가능"));
+        list = new ArrayList<>();
+        list.add(new RideItem(R.drawable.ic_one, "교통 1일권", "지하철 버스 타슈 무제한 사용 가능"));
+        list.add(new RideItem(R.drawable.ic_three, "교통 3일권", "지하철 버스 타슈 무제한 사용 가능"));
+        list.add(new RideItem(R.drawable.ic_seven, "교통 7일권", "지하철 버스 타슈 무제한 사용 가능"));
 
         adapter = new RideAdapter(list);
         recyclerView.setAdapter(adapter);
@@ -150,13 +152,13 @@ public class RideActivity extends AppCompatActivity implements RideAdapter.OnIte
 
     @Override
     public void onItemClick(int position) {
-        Toast myToast = Toast.makeText(getApplicationContext(), "하슈 아이템 눌렀다", Toast.LENGTH_SHORT);
-        myToast.show();
+       Toast.makeText(getApplicationContext(),  "구매화면으로 이동합니다", Toast.LENGTH_SHORT).show();
+
         Intent intentRide = new Intent(RideActivity.this, RideCartActivity.class);
 
         rideItem   = list.get(position);
 
-        intentRide.putExtra("image",rideItem.getRideImage());
+//        intentRide.putExtra("image",rideItem.getRideImage());
         intentRide.putExtra("title",rideItem.getRideTitle());
         intentRide.putExtra("intro",rideItem.getRideIntro());
 

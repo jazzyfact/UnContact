@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,33 +19,32 @@ import java.util.ArrayList;
 
 public class StayAdapter extends RecyclerView.Adapter<StayAdapter.ViewHolder> {
 
-    ArrayList<StayItem> list = new ArrayList<>();
-    Context context;
-    private RestaurantAdapter.OnItemClickListener mListener;
+    private ArrayList<StayItem> list = new ArrayList<>();
+    private Context context;
+    private OnItemClickListener mListener;
 
     public StayAdapter(ArrayList<StayItem> list) {
         this.list = list;
     }
 
 
-
-
-
-
-    //클릭리스너
+    //클릭리스너/////////////////
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
 
-    public void setOnItemClickListener(RestaurantAdapter.OnItemClickListener listener) {
+    public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
     }
+    //클릭리스너끝//////////////////////////////////////
+
+
     @NonNull
     @Override
     public StayAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.item_stay,parent,false);
+        View view = inflater.inflate(R.layout.item_stay, parent, false);
 
         return new ViewHolder(view);
     }
@@ -59,6 +59,7 @@ public class StayAdapter extends RecyclerView.Adapter<StayAdapter.ViewHolder> {
         holder.ivStayImage.setImageResource(item.getStayImage());
         holder.tvStayTitle.setText(item.getStayTitle());
         holder.tvStayIntro.setText(item.getStayIntro());
+        holder.tvStayRating.setRating(item.getStayStar());
 
     }
 
@@ -73,24 +74,26 @@ public class StayAdapter extends RecyclerView.Adapter<StayAdapter.ViewHolder> {
         ImageView ivStayImage;
         TextView tvStayTitle;
         TextView tvStayIntro;
+        RatingBar tvStayRating;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            ivStayImage =itemView.findViewById(R.id.iv_stay_image);
+            ivStayImage = itemView.findViewById(R.id.iv_stay_image);
             tvStayTitle = itemView.findViewById(R.id.tv_stay_title);
             tvStayIntro = itemView.findViewById(R.id.tv_stay_intro);
-
+            tvStayRating = itemView.findViewById(R.id.tv_stay_rating);
             //클릭리스너
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.i("확인","레스토랑액티비티어댑터 클릭");
-                    if (mListener != null) {
-                        int position = getAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+
+                        if (mListener != null) {
                             mListener.onItemClick(position);
+
                         }
                     }
                 }

@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.uncontact.Adapter.RestaurantAdapter;
@@ -25,6 +27,10 @@ public class StayDetailActivity extends AppCompatActivity {
     private ArrayList<StayRoomItem> list;
     private StayRoomAdapter adapter;
 
+    private String title, image, intro;
+    Float star;
+    TextView tvResDetailTitle, tvResDetailContent;
+    RatingBar tvStayDetailRatingBar;
 
     RecyclerView.LayoutManager mLayoutManager;
     String TAG = "StayDetailActivity";
@@ -33,6 +39,9 @@ public class StayDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stay_detail);
 
+
+        tvResDetailTitle = findViewById(R.id.tv_res_detail_title);
+        tvResDetailContent = findViewById(R.id.tv_res_detail_content);
 
         //리사이클러뷰 set
         recyclerView = findViewById(R.id.stay_detail_recylcerview);
@@ -43,29 +52,32 @@ public class StayDetailActivity extends AppCompatActivity {
         //리사이클러뷰 아이템 불러오기
         getData();
 
+        //인텐트 받기
+        Intent intent = getIntent();
+        image = String.valueOf(intent.getIntExtra("image",0));
+        title = intent.getStringExtra("title");
+        intro = intent.getStringExtra("intro");
+        star = intent.getFloatExtra("star",0);
+
+
+        tvResDetailTitle.setText(title);
+        tvResDetailContent.setText(intro);
+        tvStayDetailRatingBar.setRating(star);
+
+
     }
 
     private void getData() {
         ArrayList<StayRoomItem> list = new ArrayList<>();
-        list.add(new StayRoomItem(R.drawable.ic_bed,"룸1","룸 설명"));
-        list.add(new StayRoomItem(R.drawable.ic_bed,"룸2","룸 설명"));
-        list.add(new StayRoomItem(R.drawable.ic_bed,"룸3","룸 설명"));
+        list.add(new StayRoomItem(R.drawable.single,"싱글 룸","멋진 뷰를 볼 수 있는 방입니다. 하나의 침대가 있습니다"));
+        list.add(new StayRoomItem(R.drawable.couple,"커플 룸 ","아늑한 조명, 분위기를 느낄 수 있는 방입니다. 더블 침대가 있습니다"));
+        list.add(new StayRoomItem(R.drawable.famaily,"패밀리 룸","넓고 깔끔한 느낌을 주는 방입니다. 가족단위의 가족들이 많이 찾습니다"));
 
 
         adapter = new StayRoomAdapter(list);
         recyclerView.setAdapter(adapter);
 
-        //어댑터클릭리스너
-//        adapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View v, int position) {
-//                // 클릭했을때 원하는데로 처리해주는 부분
-//                Toast myToast = Toast.makeText(getApplicationContext(),"포지션 눌렀다" + position, Toast.LENGTH_SHORT);
-//                myToast.show();
-//                Intent intentDetail = new Intent(StayDetailActivity.this, StayRoomSelectActivity.class);
-//                startActivity(intentDetail);
-//            }
-//        });
+
 
     }
 }
