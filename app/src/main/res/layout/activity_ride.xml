@@ -96,6 +96,17 @@
             android:text="드슈" />
 
         <TextView
+            android:id="@+id/tv_ride_do"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="하슈"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/tv_ride_buy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

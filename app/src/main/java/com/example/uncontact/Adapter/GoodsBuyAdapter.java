@@ -1,6 +1,7 @@
 package com.example.uncontact.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ public class GoodsBuyAdapter extends RecyclerView.Adapter<GoodsBuyAdapter.ViewHo
 
     ArrayList<GoodsBuyItem> list = new ArrayList<>();
     Context context;
+    private OnItemClickListener mListener;
 
 
     public GoodsBuyAdapter(ArrayList<GoodsBuyItem> list) {
@@ -26,16 +28,13 @@ public class GoodsBuyAdapter extends RecyclerView.Adapter<GoodsBuyAdapter.ViewHo
     }
 
 
-    //클릭이벤트
-    private RestaurantAdapter.OnItemClickListener mListener = null ;
-
+    //클릭리스너
     public interface OnItemClickListener {
-        void onItemClick(View v, int position) ;
+        void onItemClick(int position);
     }
 
-    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
-    public void setOnItemClickListener(RestaurantAdapter.OnItemClickListener listener) {
-        this.mListener = listener ;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
     }
 
 
@@ -84,19 +83,16 @@ public class GoodsBuyAdapter extends RecyclerView.Adapter<GoodsBuyAdapter.ViewHo
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if(position != RecyclerView.NO_POSITION){
-
-                        if(mListener != null){
+                    Log.i("확인","레스토랑액티비티어댑터 클릭");
+                    if (mListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
                             mListener.onItemClick(position);
-
-
                         }
-
-
                     }
                 }
             });
+            ////////////클릭리스너 끝//////////////////////
 
 
         }

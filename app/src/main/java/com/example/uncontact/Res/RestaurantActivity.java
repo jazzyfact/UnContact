@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.uncontact.Adapter.RestaurantAdapter;
+import com.example.uncontact.Do.DoActivity;
 import com.example.uncontact.GoodsBuy.GoodsBuyActivity;
 import com.example.uncontact.MainActivity;
 import com.example.uncontact.Model.ResMenuItem;
@@ -33,7 +34,7 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
     private RestaurantAdapter adapter;
 
 
-    private TextView tvBtnRestaur, btRecommendation,tvBtnBuy, tvBtnStay, tvBtnRide, btnResMypageSend;
+    private TextView tvBtnRestaur, btRecommendation,tvBtnBuy, tvBtnStay, tvBtnRide, btnResMypageSend, tvBtnDo;
     RecyclerView.LayoutManager mLayoutManager;
     String TAG = "RestaurantActivity";
 
@@ -47,6 +48,7 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
         btnResMypageSend = findViewById(R.id.btn_res_mypageSend);
 
         tvBtnRestaur = findViewById(R.id.tv_res);
+        tvBtnDo = findViewById(R.id.tv_do);
         tvBtnBuy = findViewById(R.id.tv_buy);
         tvBtnStay = findViewById(R.id.tv_stay);
         tvBtnRide = findViewById(R.id.tv_ride);
@@ -80,6 +82,15 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
                 startActivity(intentRec);
             }
         });
+
+        tvBtnDo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentDo =  new Intent(RestaurantActivity.this, DoActivity.class);
+                startActivity(intentDo);
+            }
+        });
+
 
         btnResMypageSend.setOnClickListener(new View.OnClickListener() {
             @Override
