@@ -27,13 +27,25 @@
             android:layout_marginLeft="20sp"/>
 
         <TextView
-            android:id="@+id/tv_qrCode"
+        android:id="@+id/tv_qrCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20sp"
+        android:layout_weight="1"
+        android:text="QR코드 결제"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_barCodeScan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="20sp"
             android:layout_weight="1"
-            android:text="QR코드 결제"
+            android:text="바코드 스캔"
             android:textColor="#fff"
             android:textSize="20sp"
             android:textStyle="bold" />
