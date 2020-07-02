@@ -89,7 +89,7 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
                     if(position != RecyclerView.NO_POSITION){
 
                         if(mListener != null){
-                            mListener.onItemClick(v,position);
+                            mListener.onItemClick(position);
 
 
                         }

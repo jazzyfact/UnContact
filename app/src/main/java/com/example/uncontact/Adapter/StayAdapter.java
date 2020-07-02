@@ -89,7 +89,7 @@ public class StayAdapter extends RecyclerView.Adapter<StayAdapter.ViewHolder> {
                     if(position != RecyclerView.NO_POSITION){
 
                         if(mListener != null){
-                            mListener.onItemClick(v,position);
+                            mListener.onItemClick(position);
 
                         }
                     }

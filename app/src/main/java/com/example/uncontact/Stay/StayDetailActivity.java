@@ -56,16 +56,16 @@ public class StayDetailActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         //어댑터클릭리스너
-        adapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View v, int position) {
-                // 클릭했을때 원하는데로 처리해주는 부분
-                Toast myToast = Toast.makeText(getApplicationContext(),"포지션 눌렀다" + position, Toast.LENGTH_SHORT);
-                myToast.show();
-                Intent intentDetail = new Intent(StayDetailActivity.this, StayRoomSelectActivity.class);
-                startActivity(intentDetail);
-            }
-        });
+//        adapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View v, int position) {
+//                // 클릭했을때 원하는데로 처리해주는 부분
+//                Toast myToast = Toast.makeText(getApplicationContext(),"포지션 눌렀다" + position, Toast.LENGTH_SHORT);
+//                myToast.show();
+//                Intent intentDetail = new Intent(StayDetailActivity.this, StayRoomSelectActivity.class);
+//                startActivity(intentDetail);
+//            }
+//        });
 
     }
 }
