@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".BarCodeActivity"></activity>
+        <activity android:name=".MainDetailActivity"></activity>
+        <activity android:name=".BarCodeActivity" />
         <activity android:name=".Do.DoDetailActivity" />
         <activity android:name=".Do.DoActivity" />
         <activity android:name=".QrCodeStampActivity" />
