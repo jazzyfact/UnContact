@@ -136,6 +136,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
                     }
                 }
             });
+            ////////////클릭리스너 끝//////////////////////
         }
     }
 }

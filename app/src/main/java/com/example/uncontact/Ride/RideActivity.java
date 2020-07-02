@@ -22,7 +22,7 @@ import com.example.uncontact.Stay.StayActivity;
 
 import java.util.ArrayList;
 
-public class RideActivity extends AppCompatActivity implements View.OnClickListener {
+public class RideActivity extends AppCompatActivity implements RideAdapter.OnItemClickListener {
 
     private RecyclerView recyclerView;
     private ArrayList<RideItem> list;
@@ -56,11 +56,11 @@ public class RideActivity extends AppCompatActivity implements View.OnClickListe
 
 
         //클릭이벤트
-        btnRideRecomme.setOnClickListener(this);
-        btnRideMypageSend.setOnClickListener(this);
-        tvBtnRestaur.setOnClickListener(this);
-        tvBtnBuy.setOnClickListener(this);
-        tvBtnStay.setOnClickListener(this);
+//        btnRideRecomme.setOnClickListener(this);
+//        btnRideMypageSend.setOnClickListener(this);
+//        tvBtnRestaur.setOnClickListener(this);
+//        tvBtnBuy.setOnClickListener(this);
+//        tvBtnStay.setOnClickListener(this);
 ////        tvBtnRide.setOnClickListener(this);
 
 
@@ -72,6 +72,14 @@ public class RideActivity extends AppCompatActivity implements View.OnClickListe
 
         //리사이클러뷰 아이템 불러오기
         getData();
+
+        //클릭이벤트
+        getClick();
+
+    }
+
+    private void getClick() {
+
 
     }
 
@@ -99,42 +107,48 @@ public class RideActivity extends AppCompatActivity implements View.OnClickListe
 //        });
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            //추천
-            case R.id.btn_ride_recomme:
-                Intent intentRec = new Intent(RideActivity.this, MainActivity.class);
-                startActivity(intentRec);
-                break;
-            //마이페이지
-            case R.id.btn_ride_mypageSend:
-                Intent intentMyPage =  new Intent(RideActivity.this, mypage.class);
-                startActivity(intentMyPage);
-                break;
-
-            //드슈
-            case R.id.tv_ride_res:
-                Intent intentRes = new Intent(RideActivity.this, RestaurantActivity.class);
-                startActivity(intentRes);
-                break;
-
-
-            //사슈
-            case R.id.tv_ride_buy:
-                Intent intentBuy = new Intent(RideActivity.this, GoodsBuyActivity.class);
-                startActivity(intentBuy);
-                break;
-            //자슈
-            case R.id.tv_ride_stay:
-                Intent intentStay = new Intent(RideActivity.this, StayActivity.class);
-                startActivity(intentStay);
-                break;
-            //타슈
-//            case R.id.tv_ride:
-//                Intent intentRide = new Intent(RideActivity.this, RideActivity.class);
-//                startActivity(intentRide);
+//    @Override
+//    public void onClick(View v) {
+//        switch (v.getId()) {
+//            //추천
+//            case R.id.btn_ride_recomme:
+//                Intent intentRec = new Intent(RideActivity.this, MainActivity.class);
+//                startActivity(intentRec);
 //                break;
-        }
+//            //마이페이지
+//            case R.id.btn_ride_mypageSend:
+//                Intent intentMyPage =  new Intent(RideActivity.this, mypage.class);
+//                startActivity(intentMyPage);
+//                break;
+//
+//            //드슈
+//            case R.id.tv_ride_res:
+//                Intent intentRes = new Intent(RideActivity.this, RestaurantActivity.class);
+//                startActivity(intentRes);
+//                break;
+//
+//
+//            //사슈
+//            case R.id.tv_ride_buy:
+//                Intent intentBuy = new Intent(RideActivity.this, GoodsBuyActivity.class);
+//                startActivity(intentBuy);
+//                break;
+//            //자슈
+//            case R.id.tv_ride_stay:
+//                Intent intentStay = new Intent(RideActivity.this, StayActivity.class);
+//                startActivity(intentStay);
+//                break;
+//            //타슈
+////            case R.id.tv_ride:
+////                Intent intentRide = new Intent(RideActivity.this, RideActivity.class);
+////                startActivity(intentRide);
+////                break;
+//        }
+//    }
+
+    @Override
+    public void onItemClick(View v, int position) {
+
+
     }
 }
