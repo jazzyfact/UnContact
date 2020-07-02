@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 import com.example.uncontact.Adapter.RestaurantAdapter;
 import com.example.uncontact.Adapter.RideAdapter;
 import com.example.uncontact.Adapter.StayAdapter;
+import com.example.uncontact.Do.DoActivity;
+import com.example.uncontact.Do.DoDetailActivity;
 import com.example.uncontact.GoodsBuy.GoodsBuyActivity;
 import com.example.uncontact.MainActivity;
 import com.example.uncontact.Model.StayItem;
@@ -24,17 +27,19 @@ import com.example.uncontact.Ride.RideCartActivity;
 
 import java.util.ArrayList;
 
-public class StayActivity extends AppCompatActivity implements View.OnClickListener {
+public class StayActivity extends AppCompatActivity implements View.OnClickListener, StayAdapter.OnItemClickListener {
 
 
-    private TextView tvBtnStayRes, tvBtnStayGoods,  tvBtnStayRide, tvBtnStayRecomm,tvBtnStayMypageSend;
+    private TextView tvBtnStayRes, tvBtnStayGoods, tvBtnStayRide, tvBtnStayRecomm, tvBtnStayMypageSend;
     private RecyclerView recyclerView;
     private StayAdapter adapter;
+    private ArrayList<StayItem> list;
+    private StayItem item;
 
     RecyclerView.LayoutManager mLayoutManager;
     String TAG = "StayActivity";
-    
-    
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +47,9 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
 
 
         tvBtnStayRecomm = findViewById(R.id.tv_btn_stay_recomm);
-        tvBtnStayMypageSend =findViewById(R.id.tv_btn_stay_mypageSend);
+        tvBtnStayMypageSend = findViewById(R.id.tv_btn_stay_mypageSend);
         tvBtnStayRes = findViewById(R.id.tv_btn_stay_res);
-        tvBtnStayGoods =findViewById(R.id.tv_btn_stay_goods);
+        tvBtnStayGoods = findViewById(R.id.tv_btn_stay_goods);
         tvBtnStayRide = findViewById(R.id.tv_btn_stay_ride);
 
         //리사이클러뷰 set
@@ -52,7 +57,7 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
-        
+
         //클릭이벤트
         tvBtnStayRecomm.setOnClickListener(this);
         tvBtnStayMypageSend.setOnClickListener(this);
@@ -62,27 +67,27 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
 
         //리사이클러뷰 아이템 불러오기
         getData();
-        
+
     }
 
     private void getData() {
 
-        ArrayList<StayItem> list = new ArrayList<>();
-        list.add(new StayItem(R.drawable.ic_hotel2,"호텔1","호텔정보입니다"));
-        list.add(new StayItem(R.drawable.ic_hotel2,"호텔2","호텔정보입니다"));
-        list.add(new StayItem(R.drawable.ic_hotel2,"호텔3","호텔정보입니다"));
-        list.add(new StayItem(R.drawable.ic_hotel2,"호텔4","호텔정보입니다"));
-        list.add(new StayItem(R.drawable.ic_hotel2,"호텔5","호텔정보입니다"));
-        list.add(new StayItem(R.drawable.ic_hotel2,"호텔6","호텔정보입니다"));
-        list.add(new StayItem(R.drawable.ic_hotel2,"호텔7","호텔정보입니다"));
-        list.add(new StayItem(R.drawable.ic_hotel2,"호텔8","호텔정보입니다"));
-        list.add(new StayItem(R.drawable.ic_hotel2,"호텔9","호텔정보입니다"));
-        list.add(new StayItem(R.drawable.ic_hotel2,"호텔10","호텔정보입니다"));
-
+        list = new ArrayList<>();
+        list.add(new StayItem(R.drawable.hotel1, "크리스탈호텔", "신축 개업한 호텔입니다. ",4));
+        list.add(new StayItem(R.drawable.hotel2, "유성구호텔", "멋진 수영장을 가지고 있는 호텔입니다",5));
+        list.add(new StayItem(R.drawable.hotel3, "라빈느호텔", "최고의 서비스를 제공하는 호텔입니다",4));
+        list.add(new StayItem(R.drawable.hotel4, "오월드펜션", "오월드 근처에 있는 펜션입니다.",3));
+        list.add(new StayItem(R.drawable.hotel5, "오백리펜션", "대청호 인근에 있는 펜션입니다",4));
+        list.add(new StayItem(R.drawable.hotel7, "보문산펜션", "보문산의 기운을 느낄 수 있는 펜션입니다",3));
+        list.add(new StayItem(R.drawable.hotel8, "장태산펜션", "메타세콰이아길과 가깝고, 산림욕을 즐길 수 있습니다",4));
+        list.add(new StayItem(R.drawable.hotel9, "식장산펜션", "멋진 야경을 볼 수 있는 펜션입니다",4));
+        list.add(new StayItem(R.drawable.hotel10, "계족산펜션", "대전시내를 한 눈에 볼 수 있습니다",5));
+//        list.add(new StayItem(R.drawable.hotel1, "패밀리호텔", "가족단위의 손님이 많이 오는 펜션입니다"));
 
 
         adapter = new StayAdapter(list);
         recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(StayActivity.this);
 
 
         //어댑터클릭리스너
@@ -100,7 +105,7 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
 
             //추천
             case R.id.tv_btn_stay_recomm:
@@ -111,7 +116,7 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             //마이페이지
             case R.id.tv_btn_stay_mypageSend:
-                Intent intentMyPage =  new Intent(StayActivity.this, mypage.class);
+                Intent intentMyPage = new Intent(StayActivity.this, mypage.class);
                 startActivity(intentMyPage);
                 //애니메이션제거
                 overridePendingTransition(0, 0);
@@ -141,5 +146,26 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
                 overridePendingTransition(0, 0);
                 break;
         }
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
+
+        Toast.makeText(getApplicationContext(), "선택하셨습니다", Toast.LENGTH_SHORT).show();
+
+        Intent intentDo = new Intent(StayActivity.this, StayDetailActivity.class);
+
+        item = list.get(position);
+
+        intentDo.putExtra("image", item.getStayImage());
+        intentDo.putExtra("title", item.getStayTitle());
+        intentDo.putExtra("intro", item.getStayIntro());
+        intentDo.putExtra("star",item.getStayStar());
+        Log.i(TAG,"star~~~~~" + item.getStayStar());
+        startActivity(intentDo);
+        //애니메이션제거
+        overridePendingTransition(0, 0);
+
     }
 }

@@ -21,7 +21,7 @@
         android:textStyle="bold" />
 
     <RatingBar
-        android:id="@+id/tv_res_detail_rating_bar"
+        android:id="@+id/tv_stay_detail_rating_bar"
         style="?android:attr/ratingBarStyleIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
