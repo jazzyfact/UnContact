@@ -165,9 +165,9 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
                 Toast myToast = Toast.makeText(getApplicationContext(), "눌렀다", Toast.LENGTH_SHORT);
                 myToast.show();
                 Intent travelIntent = new Intent(MainActivity.this, RestaurantActivity.class);
-                //애니메이션 제거
-                travelIntent.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(travelIntent);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
             }
         });
         // 여행 보러가기 끝 ---------------------------------------------------------------------------
@@ -347,10 +347,10 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         intentMain.putExtra("image", mainReData.getMainReImage());
         intentMain.putExtra("title", mainReData.getMainReTitle());
         intentMain.putExtra("intro",mainReData.getMainReContent());
-        //애니메이션 제거
-        intentMain.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
         Log.i(TAG,"이미지~~~" +mainReData.getMainReImage());
         startActivity(intentMain);
+        //애니메이션제거
+        overridePendingTransition(0, 0);
     }
 
     //축체 상제 정보 화면 끝////////////////////////////////////////////////////////////////////////////

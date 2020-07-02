@@ -20,25 +20,22 @@ public class RideAdapter extends RecyclerView.Adapter<RideAdapter.ViewHolder> {
 
     ArrayList<RideItem> list = new ArrayList<>();
     Context context;
-
+    private OnItemClickListener mListener;
 
     public RideAdapter(ArrayList<RideItem> list) {
         this.list = list;
     }
 
-
-
-    //클릭이벤트
-    private RestaurantAdapter.OnItemClickListener mListener = null ;
-
+    //클릭리스너/////////////////
     public interface OnItemClickListener {
-        void onItemClick(View v, int position) ;
+        void onItemClick(int position);
     }
 
-    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
-    public void setOnItemClickListener(RestaurantAdapter.OnItemClickListener listener) {
-        this.mListener = listener ;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
     }
+    //클릭리스너끝//////////////////////////////////////
+
 
 
     @NonNull
@@ -103,7 +100,6 @@ public class RideAdapter extends RecyclerView.Adapter<RideAdapter.ViewHolder> {
             });
 
             ////////////클릭이번트 끝
-
         }
     }
 }

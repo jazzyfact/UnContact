@@ -76,6 +76,8 @@ public class DoActivity extends AppCompatActivity implements DoAdapter.OnItemCli
             public void onClick(View v) {
                 Intent intentRec =  new Intent(DoActivity.this, MainActivity.class);
                 startActivity(intentRec);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -85,6 +87,8 @@ public class DoActivity extends AppCompatActivity implements DoAdapter.OnItemCli
             public void onClick(View v) {
                 Intent intentMyPage =  new Intent(DoActivity.this, mypage.class);
                 startActivity(intentMyPage);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -93,6 +97,8 @@ public class DoActivity extends AppCompatActivity implements DoAdapter.OnItemCli
             public void onClick(View v) {
                 Intent intentMyPage =  new Intent(DoActivity.this, RestaurantActivity.class);
                 startActivity(intentMyPage);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -101,6 +107,8 @@ public class DoActivity extends AppCompatActivity implements DoAdapter.OnItemCli
             public void onClick(View v) {
                 Intent intentBuy = new Intent(DoActivity.this, GoodsBuyActivity.class);
                 startActivity(intentBuy);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -110,6 +118,8 @@ public class DoActivity extends AppCompatActivity implements DoAdapter.OnItemCli
             public void onClick(View v) {
                 Intent intentStay = new Intent(DoActivity.this, StayActivity.class);
                 startActivity(intentStay);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -118,6 +128,8 @@ public class DoActivity extends AppCompatActivity implements DoAdapter.OnItemCli
             public void onClick(View v) {
                 Intent intentRide = new Intent(DoActivity.this, RideActivity.class);
                 startActivity(intentRide);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -156,6 +168,8 @@ public class DoActivity extends AppCompatActivity implements DoAdapter.OnItemCli
         intentDo.putExtra("intro",doItem.getDoIntro());
 
         startActivity(intentDo);
+        //애니메이션제거
+        overridePendingTransition(0, 0);
 
     }
 }

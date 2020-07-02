@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.uncontact.R;
 
 public class RideCartActivity extends AppCompatActivity implements View.OnClickListener{
 
+    TextView ride_cart_menu_title,rideCartPrice;
     Button btnRideCartPay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
