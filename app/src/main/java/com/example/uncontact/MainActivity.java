@@ -121,6 +121,9 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         addMainItemClass.add(new MainReData("R.drawable.toto", "축제", "대전 토토즐 페스티벌", "토요일 토요일은 즐거워!"));
         addMainItemClass.add(new MainReData("R.drawable.tashu", "운동", "대전 시민 공용자전거", "원하는 장소에서 쉽게 대여하고, 사용후 편리하게 반납하는"));
         addMainItemClass.add(new MainReData("R.drawable.deachung", "힐링", "대청호 오백리길", "걸으며 사색하는 그림 속 호수"));
+        addMainItemClass.add(new MainReData("R.drawable.manbal", "건강", "계족산 맨발축제", "숲속황톳길을 맨발로 걷거나 달리는 세계 유일의 맨발축제"));
+        addMainItemClass.add(new MainReData("R.drawable.onchun", "치유", "유성온천문화축제", "천년온천 유성의 천가지 즐거움!"));
+        addMainItemClass.add(new MainReData("R.drawable.untact", "휴식", "대전 언텍트 관광명소 추천", "코로나19로 쌓인 스트레스, 대전서 날려버려요!"));
         re_recmdRecyclerview = findViewById(R.id.re_recmdRecyclerview);
         re_recmdRecyclerview.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL));
         re_recmdRecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2)); // 레이아웃 메니저
@@ -184,7 +187,6 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, QrCodeActivity.class);
                 startActivity(intent);
-
 
 //                bottom_sheet bottomSheet = new bottom_sheet();
 //                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");

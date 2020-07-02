@@ -46,10 +46,15 @@ public class MainReAdapter extends RecyclerView.Adapter<MainReAdapter.ViewHolder
             holder.tv_main_itemImage.setImageResource(R.drawable.toto);
         } else if (mData.get(position).mainReImage.equals("R.drawable.tashu")){
             holder.tv_main_itemImage.setImageResource(R.drawable.tashu);
+        } else if(mData.get(position).mainReImage.equals("R.drawable.manbal")){
+            holder.tv_main_itemImage.setImageResource(R.drawable.manbal);
+        } else if(mData.get(position).mainReImage.equals("R.drawable.onchun")){
+            holder.tv_main_itemImage.setImageResource(R.drawable.onchun);
+        } else if(mData.get(position).mainReImage.equals("R.drawable.untact")){
+            holder.tv_main_itemImage.setImageResource(R.drawable.untact);
         } else {
             holder.tv_main_itemImage.setImageResource(R.drawable.deachung);
         }
-
         holder.tv_main_itemCartegory.setText(mData.get(position).mainReCategory);
         holder.tv_main_itemTitle.setText(mData.get(position).mainReTitle);
         holder.tv_main_itemContent.setText(mData.get(position).mainReContent);
