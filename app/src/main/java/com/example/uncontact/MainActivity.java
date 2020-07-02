@@ -1,5 +1,6 @@
 package com.example.uncontact;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -21,6 +22,11 @@ import com.example.uncontact.MainBottom.bottom_sheet;
 import com.example.uncontact.Mypage.mypage;
 import com.example.uncontact.Res.RestaurantActivity;
 import com.example.uncontact.alarm.alarm;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import java.util.ArrayList;
 
@@ -58,8 +64,10 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
 
     // 스탬프 관련
     ImageView iv_stamImage;
-
+    TextView tv_stampNumber;
     ImageView bt_alarm;
+    static int stampNumber = 0;
+    TextView tv_stampTitle;
 
     Intent intent;
     String TAG = "MainActivity";
@@ -70,16 +78,40 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        if (qrcode != null) {
-            //큐알코드 받아오기------------------------------
+        if(qrcode != null) {
+            if (qrcode.equals("결제")) {
+                //큐알코드 받아오기------------------------------
 //            qrcode = intent.getStringExtra("qrcode");
-            Log.i(TAG, "큐알코드" + qrcode);
+                Log.i(TAG, "큐알코드" + qrcode);
+                bottom_sheet bottomSheet = new bottom_sheet();
+                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
+            } else {
 
-            bottom_sheet bottomSheet = new bottom_sheet();
-            bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
-
+            }
         }
+
+        //파이어베이스를 사용할 토큰 생성 시작 -------------------------------------------------------------
+        FirebaseApp.initializeApp(this);
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "getInstanceId failed", task.getException());
+                            return;
+                        }
+
+                        // Get new Instance ID token
+                        String token = task.getResult().getToken();
+
+                        // Log and toast
+                        String msg = getString(R.string.msg_token_fmt, token);
+                        Log.d(TAG, msg);
+                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        //파이어베이스를 사용할 토큰 생성 끝 --------------------------------------------------------------
 
 
         // 메인 리사이클러뷰 시작 -----------------------------------------------------------------------
@@ -186,6 +218,29 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
                 startActivity(new Intent(getApplication(), alarm.class));
             }
         });
+
+        // 스탬프 갯수 관련 시작 -----------------------------------------------------------------------
+
+        tv_stampNumber = findViewById(R.id.tv_stampNumber);
+        tv_stampNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplication(), stamp.class));
+            }
+        });
+        tv_stampNumber.setText(String.valueOf(stampNumber));
+
+        tv_stampTitle = findViewById(R.id.tv_stampTitle);
+        tv_stampTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplication(), stamp.class));
+            }
+        });
+
+
+
+        // 스탬프 갯수 관련 끝 -------------------------------------------------------------------------
 
     }
 
