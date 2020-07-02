@@ -88,7 +88,7 @@ public class GoodsBuyAdapter extends RecyclerView.Adapter<GoodsBuyAdapter.ViewHo
                     if(position != RecyclerView.NO_POSITION){
 
                         if(mListener != null){
-                            mListener.onItemClick(v,position);
+                            mListener.onItemClick(position);
 
 
                         }

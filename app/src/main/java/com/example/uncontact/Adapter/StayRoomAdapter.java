@@ -92,7 +92,7 @@ public class StayRoomAdapter extends RecyclerView.Adapter<StayRoomAdapter.ViewHo
                     if(position != RecyclerView.NO_POSITION){
 
                         if(mListener != null){
-                            mListener.onItemClick(v,position);
+                            mListener.onItemClick(position);
 
 
                         }

@@ -73,23 +73,31 @@ public class GoodsBuyActivity extends AppCompatActivity implements View.OnClickL
         list.add(new GoodsBuyItem(R.drawable.gift,"기념품1","기념품에 관한 설명"));
         list.add(new GoodsBuyItem(R.drawable.gift,"기념품2","기념품에 관한 설명"));
         list.add(new GoodsBuyItem(R.drawable.gift,"기념품3","기념품에 관한 설명"));
+        list.add(new GoodsBuyItem(R.drawable.gift,"기념품4","기념품에 관한 설명"));
+        list.add(new GoodsBuyItem(R.drawable.gift,"기념품5","기념품에 관한 설명"));
+        list.add(new GoodsBuyItem(R.drawable.gift,"기념품6","기념품에 관한 설명"));
+        list.add(new GoodsBuyItem(R.drawable.gift,"기념품7","기념품에 관한 설명"));
+        list.add(new GoodsBuyItem(R.drawable.gift,"기념품8","기념품에 관한 설명"));
+        list.add(new GoodsBuyItem(R.drawable.gift,"기념품9","기념품에 관한 설명"));
+        list.add(new GoodsBuyItem(R.drawable.gift,"기념품10","기념품에 관한 설명"));
+
 
 
         adapter = new GoodsBuyAdapter(list);
         recyclerView.setAdapter(adapter);
 
 
-        //어댑터클릭리스너
-        adapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View v, int position) {
-                // 클릭했을때 원하는데로 처리해주는 부분
-                Toast myToast = Toast.makeText(getApplicationContext(),"포지션 눌렀다" + position, Toast.LENGTH_SHORT);
-                myToast.show();
-                Intent intentDetail = new Intent(GoodsBuyActivity.this, GoodsBuyDetailActivity.class);
-                startActivity(intentDetail);
-            }
-        });
+//        //어댑터클릭리스너
+//        adapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View v, int position) {
+//                // 클릭했을때 원하는데로 처리해주는 부분
+//                Toast myToast = Toast.makeText(getApplicationContext(),"포지션 눌렀다" + position, Toast.LENGTH_SHORT);
+//                myToast.show();
+//                Intent intentDetail = new Intent(GoodsBuyActivity.this, GoodsBuyDetailActivity.class);
+//                startActivity(intentDetail);
+//            }
+//        });
 
     }
 

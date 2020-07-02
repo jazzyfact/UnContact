@@ -71,22 +71,31 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
         list.add(new StayItem(R.drawable.ic_hotel2,"호텔1","호텔정보입니다"));
         list.add(new StayItem(R.drawable.ic_hotel2,"호텔2","호텔정보입니다"));
         list.add(new StayItem(R.drawable.ic_hotel2,"호텔3","호텔정보입니다"));
+        list.add(new StayItem(R.drawable.ic_hotel2,"호텔4","호텔정보입니다"));
+        list.add(new StayItem(R.drawable.ic_hotel2,"호텔5","호텔정보입니다"));
+        list.add(new StayItem(R.drawable.ic_hotel2,"호텔6","호텔정보입니다"));
+        list.add(new StayItem(R.drawable.ic_hotel2,"호텔7","호텔정보입니다"));
+        list.add(new StayItem(R.drawable.ic_hotel2,"호텔8","호텔정보입니다"));
+        list.add(new StayItem(R.drawable.ic_hotel2,"호텔9","호텔정보입니다"));
+        list.add(new StayItem(R.drawable.ic_hotel2,"호텔10","호텔정보입니다"));
+
+
 
         adapter = new StayAdapter(list);
         recyclerView.setAdapter(adapter);
 
 
         //어댑터클릭리스너
-        adapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View v, int position) {
-                // 클릭했을때 원하는데로 처리해주는 부분
-                Toast myToast = Toast.makeText(getApplicationContext(), "포지션 눌렀다" + position, Toast.LENGTH_SHORT);
-                myToast.show();
-                Intent intentDetail = new Intent(StayActivity.this, StayDetailActivity.class);
-                startActivity(intentDetail);
-            }
-        });
+//        adapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View v, int position) {
+//                // 클릭했을때 원하는데로 처리해주는 부분
+//                Toast myToast = Toast.makeText(getApplicationContext(), "포지션 눌렀다" + position, Toast.LENGTH_SHORT);
+//                myToast.show();
+//                Intent intentDetail = new Intent(StayActivity.this, StayDetailActivity.class);
+//                startActivity(intentDetail);
+//            }
+//        });
     }
 
     @Override

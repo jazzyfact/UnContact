@@ -95,7 +95,7 @@ public class RideAdapter extends RecyclerView.Adapter<RideAdapter.ViewHolder> {
                     if(position != RecyclerView.NO_POSITION){
 
                         if(mListener != null){
-                            mListener.onItemClick(v,position);
+                            mListener.onItemClick(position);
 
                         }
                     }
