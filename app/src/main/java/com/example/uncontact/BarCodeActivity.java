@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.uncontact.GoodsBuy.GoodsBuyCartActivity;
 import com.example.uncontact.Res.RestaurantDetailActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -50,7 +51,7 @@ public class BarCodeActivity extends AppCompatActivity {
 
                 String qrCodeGet =  result.getContents();
 
-                Intent intent = new Intent(BarCodeActivity.this, RestaurantDetailActivity.class);
+                Intent intent = new Intent(BarCodeActivity.this, GoodsBuyCartActivity.class);
                 intent.putExtra("qrcode",qrCodeGet);
                 startActivity(intent);
 
