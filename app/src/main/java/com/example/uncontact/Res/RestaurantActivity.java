@@ -163,12 +163,15 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
 
         list = new ArrayList<>();
         list.add(new RestaurantItem("한식",R.drawable.gogi, "꽃차돌", "나래가 추천하는 산성동 고기맛집", 5));
-        list.add(new RestaurantItem("중식",R.drawable.cha, "차오차오", "24시간 영업하는 한남대학교 중식집", 4));
-        list.add(new RestaurantItem(R.drawable.berry, "사랑채", "123123", 3));
-        list.add(new RestaurantItem(R.drawable.mi, "미정숯불갈비", "123123", 3));
-        list.add(new RestaurantItem(R.drawable.berry, "오부자강릉집", "123123", 3));
-        list.add(new RestaurantItem(R.drawable.ho, "호박식당", "123123", 2));
-        list.add(new RestaurantItem(R.drawable.king, "왕궁바지락칼국수", "123123", 3));
+        list.add(new RestaurantItem("중식",R.drawable.f_dduck, "가은이네분식집", "24시간 영업하는 한남대학교 중식집", 4));
+        list.add(new RestaurantItem(R.drawable.f_bread, "발효빵", "123123", 3));
+        list.add(new RestaurantItem(R.drawable.f_kal, "50년전통해물칼국수", "123123", 3));
+        list.add(new RestaurantItem(R.drawable.f_yack, "영양가득돌솥밥", "123123", 3));
+        list.add(new RestaurantItem(R.drawable.f_pizza, "수타장인피자24시", "123123", 2));
+        list.add(new RestaurantItem(R.drawable.f_spicy, "매운쭈구미", "123123", 3));
+        list.add(new RestaurantItem(R.drawable.f_branch, "브런치", "123123", 3));
+        list.add(new RestaurantItem(R.drawable.f_back, "백반집", "123123", 3));
+        list.add(new RestaurantItem(R.drawable.f_bool, "황제불고기", "123123", 3));
 
 
         adapter = new RestaurantAdapter(list);

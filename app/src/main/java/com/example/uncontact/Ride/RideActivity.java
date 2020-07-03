@@ -87,9 +87,9 @@ public class RideActivity extends AppCompatActivity implements RideAdapter.OnIte
         Log.i(TAG, "리사이클러뷰");
 
         list = new ArrayList<>();
-        list.add(new RideItem(R.drawable.ic_one, "교통 1일권", "지하철 버스 타슈 무제한 사용 가능"));
-        list.add(new RideItem(R.drawable.ic_three, "교통 3일권", "지하철 버스 타슈 무제한 사용 가능"));
-        list.add(new RideItem(R.drawable.ic_seven, "교통 7일권", "지하철 버스 타슈 무제한 사용 가능"));
+        list.add(new RideItem(R.drawable.ic_one, "교통 1일권", "대전광역시 대중교통(버스,지하철,공공자전거) 무제한 사용 가능"));
+        list.add(new RideItem(R.drawable.ic_three, "교통 3일권", "대전광역시 대중교통(버스,지하철,공공자전거) 무제한 사용 가능"));
+        list.add(new RideItem(R.drawable.ic_seven, "교통 7일권", "대전광역시 대중교통(버스,지하철,공공자전거) 무제한 사용 가능"));
 
         adapter = new RideAdapter(list);
         recyclerView.setAdapter(adapter);

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.uncontact.Adapter.GoodsBuyAdapter;
 import com.example.uncontact.Adapter.RestaurantAdapter;
 import com.example.uncontact.Do.DoActivity;
+import com.example.uncontact.Do.DoDetailActivity;
 import com.example.uncontact.MainActivity;
 import com.example.uncontact.Model.GoodsBuyItem;
 import com.example.uncontact.Mypage.mypage;
@@ -25,11 +26,12 @@ import com.example.uncontact.Stay.StayActivity;
 
 import java.util.ArrayList;
 
-public class GoodsBuyActivity extends AppCompatActivity implements GoodsBuyAdapter.OnItemClickListener {
+public class GoodsBuyActivity extends AppCompatActivity implements GoodsBuyAdapter.OnItemClickListener, View.OnClickListener {
 
     private RecyclerView recyclerView;
     private ArrayList<GoodsBuyItem> list;
     private GoodsBuyAdapter adapter;
+    private GoodsBuyItem item;
     private TextView btnGoosBuyRecomm,  btnGoodsBuyTravel,  tvGoodsBuyRes, tvGoodsBuyStay, tvGoodsBuyRide,btnGoodsBuyMypageSend, tvGoodsBuyDo;
 
     RecyclerView.LayoutManager mLayoutManager;
@@ -138,22 +140,24 @@ public class GoodsBuyActivity extends AppCompatActivity implements GoodsBuyAdapt
     private void getData() {
         Log.i(TAG,"리사이클러뷰");
 
-        ArrayList<GoodsBuyItem> list = new ArrayList<>();
-        list.add(new GoodsBuyItem(R.drawable.gift,"기념품1","기념품에 관한 설명"));
-        list.add(new GoodsBuyItem(R.drawable.gift,"기념품2","기념품에 관한 설명"));
-        list.add(new GoodsBuyItem(R.drawable.gift,"기념품3","기념품에 관한 설명"));
-        list.add(new GoodsBuyItem(R.drawable.gift,"기념품4","기념품에 관한 설명"));
-        list.add(new GoodsBuyItem(R.drawable.gift,"기념품5","기념품에 관한 설명"));
-        list.add(new GoodsBuyItem(R.drawable.gift,"기념품6","기념품에 관한 설명"));
-        list.add(new GoodsBuyItem(R.drawable.gift,"기념품7","기념품에 관한 설명"));
-        list.add(new GoodsBuyItem(R.drawable.gift,"기념품8","기념품에 관한 설명"));
-        list.add(new GoodsBuyItem(R.drawable.gift,"기념품9","기념품에 관한 설명"));
-        list.add(new GoodsBuyItem(R.drawable.gift,"기념품10","기념품에 관한 설명"));
+        list = new ArrayList<>();
+        list.add(new GoodsBuyItem(R.drawable.g_1,"제23회 관광기념품공모전  대상","서애진"));
+        list.add(new GoodsBuyItem(R.drawable.g_2,"제23회 관광기념품공모전 금상","임미숙"));
+        list.add(new GoodsBuyItem(R.drawable.g_3,"제23회 관광기념품공모전 은상","박희창"));
+        list.add(new GoodsBuyItem(R.drawable.g_4,"제23회 관광기념품공모전 동상","길순정"));
+        list.add(new GoodsBuyItem(R.drawable.g_5,"제23회 관광기념품공모전 장려","김한솔"));
+        list.add(new GoodsBuyItem(R.drawable.g_6,"제23회 관광기념품공모전 장려","송인길"));
+        list.add(new GoodsBuyItem(R.drawable.g_7,"제23회 관광기념품공모전 특선","육동창"));
+        list.add(new GoodsBuyItem(R.drawable.g_8,"제23회 관광기념품공모전 특선","이충규, 김지연"));
+        list.add(new GoodsBuyItem(R.drawable.g_9,"제23회 관광기념품공모전 특선","조윤상"));
+        list.add(new GoodsBuyItem(R.drawable.g_10,"제23회 관광기념품공모전 특선","조윤주"));
 
 
 
         adapter = new GoodsBuyAdapter(list);
         recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(GoodsBuyActivity.this);
+
 
     }
 
@@ -161,6 +165,21 @@ public class GoodsBuyActivity extends AppCompatActivity implements GoodsBuyAdapt
     //리사이클러뷰 클릭이벤트
     @Override
     public void onItemClick(int position) {
+
+        Intent intentDo = new Intent(GoodsBuyActivity.this, GoodsBuyDetailActivity.class);
+
+        item = list.get(position);
+
+        intentDo.putExtra("image",item.getGoodsImage());
+        intentDo.putExtra("title",item.getGoosTitle());
+        intentDo.putExtra("intro",item.getGoosIntro());
+
+        startActivity(intentDo);
+
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }

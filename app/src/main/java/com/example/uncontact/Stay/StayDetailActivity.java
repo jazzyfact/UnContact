@@ -54,11 +54,11 @@ public class StayDetailActivity extends AppCompatActivity {
 
         //인텐트 받기
         Intent intent = getIntent();
-        image = String.valueOf(intent.getIntExtra("image",0));
+
         title = intent.getStringExtra("title");
         intro = intent.getStringExtra("intro");
+        //ratingbar string으로 받아오려고 해서 오류가 남, flot으로 바꿔준 후 디폴트값 넣어줘야함
         star = intent.getFloatExtra("star",0);
-
 
         tvResDetailTitle.setText(title);
         tvResDetailContent.setText(intro);
