@@ -25,7 +25,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="기념품 1" />
+        android:text="제 23회 관광기념품공모전 대상" />
 
     <TextView
         android:id="@+id/tv_goods_select_price"
@@ -36,7 +36,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="10000원" />
+        android:text="30000원" />
 
     <!--구분선-->
     <View
@@ -54,7 +54,7 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:gravity="center"
-        android:text="기념품에 대한 설명을 작성합니다" />
+        android:text="서애진" />
 
     <View
         android:layout_width="match_parent"
@@ -80,13 +80,13 @@
             android:text="수량" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/iv_goods_detail_minus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_minus" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/tv_goods_detail_num"
             android:layout_width="30dp"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -94,7 +94,7 @@
             android:text="1" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/iv_goods_detail_plus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_add" />
@@ -121,33 +121,39 @@
         android:textStyle="bold"
         android:text="예약하기" />
 
-    <RadioButton
-        android:id="@+id/radioButton4"
+    <RadioGroup
+        android:id="@+id/rb_goods_detail_group"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10sp"
-        android:text="지금방문" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
         <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10sp"
-            android:text="예약방문" />
-
-        <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/rb_goods_detail_now"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_marginLeft="10sp"
+            android:text="지금방문" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_goods_detail_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:text="예약방문" />
+
+            <Spinner
+                android:id="@+id/sp_goods_buy_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
 
-    </LinearLayout>
+        </LinearLayout>
+    </RadioGroup>
 
 
     <!--구분선-->
@@ -182,7 +188,7 @@
             android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="#3990ff"
-            android:text="16000원" />
+            android:text="30000" />
 
 
     </LinearLayout>
@@ -197,6 +203,6 @@
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:text="장바구니담기" />
+        android:text="결제하기" />
 
 </LinearLayout>
