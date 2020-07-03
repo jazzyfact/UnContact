@@ -2,6 +2,8 @@ package com.example.uncontact;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -238,5 +240,24 @@ public class stamp extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        if(MainActivity.stampNumber == 8){
+            Dialog();
+        } else {
+
+        }
     }
+
+    public void Dialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("알림");
+        builder.setMessage("온통대전 적립금 5000원이 추가되었습니다.");
+        builder.setPositiveButton("확인",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+//                        Toast.makeText(getApplicationContext(),"우측버튼 클릭됨",Toast.LENGTH_LONG).show();
+                    }
+                });
+        builder.show();
+    }
+
 }

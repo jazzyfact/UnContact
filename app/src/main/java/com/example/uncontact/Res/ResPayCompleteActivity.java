@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.example.uncontact.R;
 import com.example.uncontact.alarm.alarm;
@@ -28,7 +29,14 @@ public class ResPayCompleteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_res_pay_complete);
 
-        NotificationSomethings();
+        // 2초간 멈추게 하고싶다면
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                NotificationSomethings();;
+            }
+        }, 3000);  // 2000은 2초를 의미합니다.
+
     }
 
     public void NotificationSomethings() {

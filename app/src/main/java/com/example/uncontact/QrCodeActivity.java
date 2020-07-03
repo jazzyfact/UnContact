@@ -49,7 +49,7 @@ public class QrCodeActivity extends AppCompatActivity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
                 // todo
             } else {
-                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
 
                 String qrCodeGet =  result.getContents();
 //
@@ -59,8 +59,9 @@ public class QrCodeActivity extends AppCompatActivity {
 
                 if(qrCodeGet.equals("기념품결제중입니다")){
                     Intent intent = new Intent(QrCodeActivity.this, RestaurantDetailActivity.class);
-                    intent.putExtra("intro","메뉴소개 ");
-                    intent.putExtra("title","가게");
+                    intent.putExtra("intro","나래가 추천하는 산성동 고기맛집 ");
+                    intent.putExtra("title","꽃차돌");
+                    intent.putExtra("star",5);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(QrCodeActivity.this, MainActivity.class);
@@ -69,8 +70,6 @@ public class QrCodeActivity extends AppCompatActivity {
 
                     MainActivity.qrcode = "결제";
                 }
-
-
 
 //                bottom_sheet bottomSheet = new bottom_sheet();
 //                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
