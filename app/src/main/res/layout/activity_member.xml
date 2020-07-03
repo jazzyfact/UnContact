@@ -67,7 +67,7 @@
             android:textSize="20sp"
             android:background="@drawable/rounded_border_edittext"
             android:padding="10sp"
-            android:inputType="number"
+            android:inputType="textPassword"
             android:layout_marginTop="10sp"/>
 
 

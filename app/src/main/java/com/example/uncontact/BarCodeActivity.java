@@ -53,6 +53,13 @@ public class BarCodeActivity extends AppCompatActivity {
                 String qrCodeGet =  result.getContents();
 
                 Intent intent = new Intent(BarCodeActivity.this, GoodsBuyDetailActivity.class);
+                // 굿즈 디테일로 보내기
+//                image = String.valueOf(intent.getIntExtra("image",0));
+//                title = intent.getStringExtra("title");
+//                intro = intent.getStringExtra("intro");
+
+                intent.putExtra("title","대전시 기념품");
+                intent.putExtra("intro","기념품에 대한 설명");
                 intent.putExtra("qrcode",qrCodeGet);
                 startActivity(intent);
 
