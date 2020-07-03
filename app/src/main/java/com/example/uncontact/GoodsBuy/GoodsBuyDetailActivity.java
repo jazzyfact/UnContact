@@ -6,19 +6,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.uncontact.R;
 import com.example.uncontact.Res.ResSelectMenuActivity;
 import com.example.uncontact.Res.RestaurantDetailActivity;
 
-public class GoodsBuyDetailActivity extends AppCompatActivity implements View.OnClickListener {
+public class GoodsBuyDetailActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    ImageView ivGoodsSelectImage;
-    TextView tvGoodsSelectTitle, tvGoodsSelectIntro;
+    ImageView ivGoodsSelectImage, ivGoodsDetailMinus,ivGoodsDetailPlus;
+    TextView tvGoodsSelectTitle, tvGoodsSelectIntro, tvGoodsDetailNum,tvGoodsBuyTotalPrice;
     Button btnGoodsBuyAddCart;
+    Spinner spGoodsBuyTime;
+    String[] selectTime;
+    int count, totalCount;
+    RadioGroup rbGoodsDetailGroup;
+
+
     private String title, image, intro;
     String TAG = "GoodsBuyDetailActivity";
 
@@ -30,13 +41,36 @@ public class GoodsBuyDetailActivity extends AppCompatActivity implements View.On
         ivGoodsSelectImage = findViewById(R.id.iv_goods_select_image);
         tvGoodsSelectTitle = findViewById(R.id.tv_goods_select_title);
         tvGoodsSelectIntro = findViewById(R.id.tv_goods_select_intro);
-
+        ivGoodsDetailMinus = findViewById(R.id.iv_goods_detail_minus);
+        tvGoodsDetailNum = findViewById(R.id.tv_goods_detail_num);
+        ivGoodsDetailPlus = findViewById(R.id.iv_goods_detail_plus);
+        tvGoodsBuyTotalPrice = findViewById(R.id.tv_goods_buy_total_price);
         btnGoodsBuyAddCart = findViewById(R.id.btn_goods_buy_add_cart);
+
+
+        //라디오버튼
+
+
+
+
+        //스피너
+        spGoodsBuyTime = findViewById(R.id.sp_goods_buy_time);
+        spGoodsBuyTime.setOnItemSelectedListener(this);
+        selectTime = new String[]{"선택하세요","10분 뒤에 방문","30분 뒤에 방문","60분 뒤에 방문"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,selectTime);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spGoodsBuyTime.setAdapter(adapter);
+
+
+
+        //스피너끝
+
 
 
         //클릭리스너
         btnGoodsBuyAddCart.setOnClickListener(this);
-
+        ivGoodsDetailMinus.setOnClickListener(this);
+        ivGoodsDetailPlus.setOnClickListener(this);
 
         //데이터 받기
         Intent intent = getIntent();
@@ -61,9 +95,42 @@ public class GoodsBuyDetailActivity extends AppCompatActivity implements View.On
                 Intent intentDetail = new Intent(GoodsBuyDetailActivity.this, GoodsBuyCartActivity.class);
                 startActivity(intentDetail);
                 break;
+            //수량마이너스
+            case R.id.iv_goods_detail_minus:
+                count --;
+
+                tvGoodsDetailNum.setText(String.valueOf(count));
+                if (count < 0) {
+                    count = 0;
+                    tvGoodsDetailNum.setText("0");
+                }
+                break;
+
+
+            //수량 플러스
+            case R.id.iv_goods_detail_plus:
+                totalCount =0;
+                count ++;
+                tvGoodsDetailNum.setText(String.valueOf(count));
+                break;
+
+
+
+
+
 
         }
 
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }
