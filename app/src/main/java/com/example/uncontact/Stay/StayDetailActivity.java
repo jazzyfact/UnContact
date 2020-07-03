@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -28,7 +29,7 @@ public class StayDetailActivity extends AppCompatActivity {
     private StayRoomAdapter adapter;
 
     private String title, image, intro;
-    Float star;
+    float star;
     TextView tvResDetailTitle, tvResDetailContent;
     RatingBar tvStayDetailRatingBar;
 
@@ -42,6 +43,7 @@ public class StayDetailActivity extends AppCompatActivity {
 
         tvResDetailTitle = findViewById(R.id.tv_res_detail_title);
         tvResDetailContent = findViewById(R.id.tv_res_detail_content);
+        tvStayDetailRatingBar = findViewById(R.id.tv_stay_detail_rating_bar);
 
         //리사이클러뷰 set
         recyclerView = findViewById(R.id.stay_detail_recylcerview);
@@ -58,7 +60,10 @@ public class StayDetailActivity extends AppCompatActivity {
         title = intent.getStringExtra("title");
         intro = intent.getStringExtra("intro");
         //ratingbar string으로 받아오려고 해서 오류가 남, flot으로 바꿔준 후 디폴트값 넣어줘야함
-        star = intent.getFloatExtra("star",0);
+//        star = intent.getFloatExtra("star",0);
+        star = intent.getIntExtra("star", 0);
+
+        Log.i(TAG,"스타" + star);
 
         tvResDetailTitle.setText(title);
         tvResDetailContent.setText(intro);

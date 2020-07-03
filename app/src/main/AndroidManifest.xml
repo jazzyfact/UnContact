@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBwnWn_t3bRHTno1P7dSH7ZHT7P4lzYtWg" />
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
@@ -15,6 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <activity android:name=".MainDetailActivity"></activity>
         <activity android:name=".BarCodeActivity" />
         <activity android:name=".Do.DoDetailActivity" />

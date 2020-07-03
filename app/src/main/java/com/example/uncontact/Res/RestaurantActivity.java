@@ -236,6 +236,7 @@ public class RestaurantActivity extends AppCompatActivity implements RestaurantA
         intentDetail.putExtra("title", restaurantItem.getRestaurantName());
         intentDetail.putExtra("intro", restaurantItem.getRestaurantIntro());
         intentDetail.putExtra("star",restaurantItem.getRating());
+
 //        intentDetail.putExtra("menu_image",resMenuItem.getResMenuImage());
 //        intentDetail.putExtra("menu_title",resMenuItem.getResMenuTitle());
 //        intentDetail.putExtra("menu_intro",resMenuItem.getResMenuContent());

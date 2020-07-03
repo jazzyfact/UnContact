@@ -1,5 +1,6 @@
 package com.example.uncontact.GoodsBuy;
 
+import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -28,6 +29,7 @@ public class GoodsBuyDetailActivity extends AppCompatActivity implements View.On
     String[] selectTime;
     int count, totalCount;
     RadioGroup rbGoodsDetailGroup;
+    RadioButton rbGoodsDetailNow, rbGoodsDetailTime;
 
 
     private String title, image, intro;
@@ -46,9 +48,15 @@ public class GoodsBuyDetailActivity extends AppCompatActivity implements View.On
         ivGoodsDetailPlus = findViewById(R.id.iv_goods_detail_plus);
         tvGoodsBuyTotalPrice = findViewById(R.id.tv_goods_buy_total_price);
         btnGoodsBuyAddCart = findViewById(R.id.btn_goods_buy_add_cart);
+        rbGoodsDetailNow =findViewById(R.id.rb_goods_detail_now);
+        rbGoodsDetailTime = findViewById(R.id.rb_goods_detail_time);
+
+        //라디오그룹
+        rbGoodsDetailGroup = findViewById(R.id.rb_goods_detail_group);
+        rbGoodsDetailGroup.setOnCheckedChangeListener(radioGroupButtonChangeListener);
 
 
-        //라디오버튼
+
 
 
 
@@ -56,15 +64,13 @@ public class GoodsBuyDetailActivity extends AppCompatActivity implements View.On
         //스피너
         spGoodsBuyTime = findViewById(R.id.sp_goods_buy_time);
         spGoodsBuyTime.setOnItemSelectedListener(this);
-        selectTime = new String[]{"선택하세요","10분 뒤에 방문","30분 뒤에 방문","60분 뒤에 방문"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,selectTime);
+        selectTime = new String[]{"선택하세요", "10분 뒤에 방문", "30분 뒤에 방문", "60분 뒤에 방문"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, selectTime);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spGoodsBuyTime.setAdapter(adapter);
 
 
-
         //스피너끝
-
 
 
         //클릭리스너
@@ -74,11 +80,11 @@ public class GoodsBuyDetailActivity extends AppCompatActivity implements View.On
 
         //데이터 받기
         Intent intent = getIntent();
-        image = String.valueOf(intent.getIntExtra("image",0));
+        image = String.valueOf(intent.getIntExtra("image", 0));
         title = intent.getStringExtra("title");
         intro = intent.getStringExtra("intro");
 
-        Log.i(TAG,"이미지" + image);
+        Log.i(TAG, "이미지" + image);
 
         ivGoodsSelectImage.setImageResource(Integer.parseInt(image));
         tvGoodsSelectTitle.setText(title);
@@ -86,6 +92,28 @@ public class GoodsBuyDetailActivity extends AppCompatActivity implements View.On
 
 
     }
+
+
+    //라디오버튼
+    RadioGroup.OnCheckedChangeListener radioGroupButtonChangeListener = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+            if(i == R.id.rb_goods_detail_now) {
+
+                rbGoodsDetailTime.setChecked(false);
+                rbGoodsDetailNow.setChecked(true);
+
+
+
+            } else if (i == R.id.rb_goods_detail_time) {
+
+                rbGoodsDetailNow.setChecked(false);
+                rbGoodsDetailTime.setChecked(true);
+
+
+            }
+        }
+    };
 
     @Override
     public void onClick(View v) {

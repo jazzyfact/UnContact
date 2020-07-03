@@ -52,4 +52,6 @@ dependencies {
 
     // 노티피케이션
     implementation "androidx.core:core:1.3.0"
+    //구글지도
+    compile 'com.google.android.gms:play-services-maps:10.2.0'
 }
