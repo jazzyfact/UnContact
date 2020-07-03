@@ -19,23 +19,24 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
 
    ArrayList<ResMenuItem> list = new ArrayList<>();
     Context context;
+    private OnItemClickListener mListener;
 
     public RestaurantMenuAdapter(ArrayList<ResMenuItem> list) {
         this.list = list;
     }
 
     //클릭리스너
-   private RestaurantAdapter.OnItemClickListener mListener = null ;
 
+
+    //클릭리스너/////////////////
     public interface OnItemClickListener {
-        void onItemClick(View v, int position) ;
+        void onItemClick(int position);
     }
 
-    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
-    public void setOnItemClickListener(RestaurantAdapter.OnItemClickListener listener) {
-        this.mListener = listener ;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
     }
-
+    //클릭리스너끝//////////////////////////////////////
 
 
     // onCreateViewHolder() - 아이템 뷰를 위한 뷰홀더 객체 생성하여 리턴.
@@ -91,12 +92,12 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
                         if(mListener != null){
                             mListener.onItemClick(position);
 
-
                         }
-
                     }
                 }
             });
+
+            ////////////클릭이번트 끝
 
         }
     }

@@ -16,13 +16,15 @@ import android.widget.Toast;
 
 import com.example.uncontact.Adapter.RestaurantAdapter;
 import com.example.uncontact.Adapter.RestaurantMenuAdapter;
+import com.example.uncontact.Do.DoActivity;
+import com.example.uncontact.Do.DoDetailActivity;
 import com.example.uncontact.Model.ResMenuItem;
 import com.example.uncontact.R;
 
 import java.util.ArrayList;
 
 //드슈 식당 상세정보 페이지
-public class RestaurantDetailActivity extends AppCompatActivity {
+public class RestaurantDetailActivity extends AppCompatActivity implements RestaurantMenuAdapter.OnItemClickListener{
 
     private RecyclerView recyclerView;
     static ArrayList<ResMenuItem> resMenuItemArrayList;
@@ -30,7 +32,7 @@ public class RestaurantDetailActivity extends AppCompatActivity {
     private ResMenuItem resMenuItem;
 
     RecyclerView.LayoutManager mLayoutManager;
-    String TAG = "RestaurantActivity";
+    String TAG = "RestaurantDetailActivity";
 
     String resTitle, resCategory;
     float resRating;
@@ -134,6 +136,7 @@ public class RestaurantDetailActivity extends AppCompatActivity {
 
         adapter = new RestaurantMenuAdapter(resMenuItemArrayList);
         recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(RestaurantDetailActivity.this);
 
 
 //        //어댑터클릭리스너
@@ -147,6 +150,26 @@ public class RestaurantDetailActivity extends AppCompatActivity {
 //                startActivity(intentDetail);
 //            }
 //        });
+
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
+
+        Toast myToast = Toast.makeText(getApplicationContext(), "결제페이지로 이동합니다", Toast.LENGTH_SHORT);
+        myToast.show();
+        Intent intentDo = new Intent(RestaurantDetailActivity.this, ResCartActivity.class);
+
+        resMenuItem = resMenuItemArrayList.get(position);
+
+        intentDo.putExtra("image",resMenuItem.getResMenuImage());
+        intentDo.putExtra("title",resMenuItem.getResMenuTitle());
+        intentDo.putExtra("intro",resMenuItem.getResMenuContent());
+
+        startActivity(intentDo);
+        //애니메이션제거
+        overridePendingTransition(0, 0);
 
     }
 }
