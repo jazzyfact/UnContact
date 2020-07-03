@@ -164,8 +164,8 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
         btTravel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast myToast = Toast.makeText(getApplicationContext(), "눌렀다", Toast.LENGTH_SHORT);
-                myToast.show();
+//                Toast myToast = Toast.makeText(getApplicationContext(), "눌렀다", Toast.LENGTH_SHORT);LENGTH_SHORT
+//                myToast.show();
                 Intent travelIntent = new Intent(MainActivity.this, RestaurantActivity.class);
                 startActivity(travelIntent);
                 //애니메이션제거
