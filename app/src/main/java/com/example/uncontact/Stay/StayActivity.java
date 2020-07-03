@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class StayActivity extends AppCompatActivity implements View.OnClickListener, StayAdapter.OnItemClickListener {
 
 
-    private TextView tvBtnStayRes, tvBtnStayGoods, tvBtnStayRide, tvBtnStayRecomm, tvBtnStayMypageSend;
+    private TextView tvBtnStayRes, tvBtnStayGoods, tvBtnStayRide, tvBtnStayRecomm, tvBtnStayMypageSend, tvBtnStayDo;
     private RecyclerView recyclerView;
     private StayAdapter adapter;
     private ArrayList<StayItem> list;
@@ -49,6 +49,7 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
         tvBtnStayRecomm = findViewById(R.id.tv_btn_stay_recomm);
         tvBtnStayMypageSend = findViewById(R.id.tv_btn_stay_mypageSend);
         tvBtnStayRes = findViewById(R.id.tv_btn_stay_res);
+        tvBtnStayDo = findViewById(R.id.tv_btn_stay_do);
         tvBtnStayGoods = findViewById(R.id.tv_btn_stay_goods);
         tvBtnStayRide = findViewById(R.id.tv_btn_stay_ride);
 
@@ -62,6 +63,7 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
         tvBtnStayRecomm.setOnClickListener(this);
         tvBtnStayMypageSend.setOnClickListener(this);
         tvBtnStayRes.setOnClickListener(this);
+        tvBtnStayDo.setOnClickListener(this);
         tvBtnStayGoods.setOnClickListener(this);
         tvBtnStayRide.setOnClickListener(this);
 
@@ -74,14 +76,14 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
 
         list = new ArrayList<>();
         list.add(new StayItem(R.drawable.hotel1, "크리스탈호텔", "신축 개업한 호텔입니다. ",4));
-        list.add(new StayItem(R.drawable.hotel2, "유성구호텔", "멋진 수영장을 가지고 있는 호텔입니다",5));
-        list.add(new StayItem(R.drawable.hotel3, "라빈느호텔", "최고의 서비스를 제공하는 호텔입니다",4));
+        list.add(new StayItem(R.drawable.hotel3, "유성모텔", "최고의 서비스를 제공하는 모텔입니다",5));
+        list.add(new StayItem(R.drawable.hotel2, "라빈느호텔", "멋진 수영장을 가지고 있는 호텔입니다",4));
         list.add(new StayItem(R.drawable.hotel4, "오월드펜션", "오월드 근처에 있는 펜션입니다.",3));
-        list.add(new StayItem(R.drawable.hotel5, "오백리펜션", "대청호 인근에 있는 펜션입니다",4));
+        list.add(new StayItem(R.drawable.hotel5, "오백리캠핑장", "대청호 인근에 있는 캠핑장입니다",4));
         list.add(new StayItem(R.drawable.hotel7, "보문산펜션", "보문산의 기운을 느낄 수 있는 펜션입니다",3));
-        list.add(new StayItem(R.drawable.hotel8, "장태산펜션", "메타세콰이아길과 가깝고, 산림욕을 즐길 수 있습니다",4));
-        list.add(new StayItem(R.drawable.hotel9, "식장산펜션", "멋진 야경을 볼 수 있는 펜션입니다",4));
-        list.add(new StayItem(R.drawable.hotel10, "계족산펜션", "대전시내를 한 눈에 볼 수 있습니다",5));
+        list.add(new StayItem(R.drawable.hotel8, "장태산야영장", "메타세콰이아길과 가깝고, 산림욕을 즐길 수 있습니다",4));
+        list.add(new StayItem(R.drawable.hotel9, "식장산펜션", "멋진 야경을 볼 수 있는 펜션입니다",5));
+        list.add(new StayItem(R.drawable.hotel10, "계족산게스트하우스", "대전시내를 한 눈에 볼 수 있습니다",4));
 //        list.add(new StayItem(R.drawable.hotel1, "패밀리호텔", "가족단위의 손님이 많이 오는 펜션입니다"));
 
 
@@ -130,6 +132,13 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
                 overridePendingTransition(0, 0);
                 break;
 
+            //드슈
+            case R.id.tv_btn_stay_do:
+                Intent intentDo = new Intent(StayActivity.this, DoActivity.class);
+                startActivity(intentDo);
+                //애니메이션제거
+                overridePendingTransition(0, 0);
+                break;
 
             //사슈
             case R.id.tv_btn_stay_goods:
