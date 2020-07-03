@@ -8,6 +8,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.uncontact.MainBottom.bottom_sheet;
+import com.example.uncontact.Res.RestaurantDetailActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -51,12 +52,25 @@ public class QrCodeActivity extends AppCompatActivity {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
 
                 String qrCodeGet =  result.getContents();
+//
+//                resCategory = intent.getStringExtra("category");
+//                resTitle = intent.getStringExtra("title");
+//                resIntro = intent.getStringExtra("intro");
 
-                Intent intent = new Intent(QrCodeActivity.this, MainActivity.class);
-                intent.putExtra("qrcode",qrCodeGet);
-                startActivity(intent);
+                if(qrCodeGet.equals("기념품결제중입니다")){
+                    Intent intent = new Intent(QrCodeActivity.this, RestaurantDetailActivity.class);
+                    intent.putExtra("intro","메뉴소개 ");
+                    intent.putExtra("title","가게");
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(QrCodeActivity.this, MainActivity.class);
+                    intent.putExtra("qrcode",qrCodeGet);
+                    startActivity(intent);
 
-                MainActivity.qrcode = "결제";
+                    MainActivity.qrcode = "결제";
+                }
+
+
 
 //                bottom_sheet bottomSheet = new bottom_sheet();
 //                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");

@@ -39,23 +39,40 @@ public class stamp extends AppCompatActivity {
         tv_stamp8_ck = findViewById(R.id.tv_stamp8_ck);
 
         if(stampNumber == 0){
-            tv_stamp1.setVisibility(View.VISIBLE);
-            tv_stamp2.setVisibility(View.VISIBLE);
-            tv_stamp3.setVisibility(View.VISIBLE);
-            tv_stamp4.setVisibility(View.VISIBLE);
-            tv_stamp5.setVisibility(View.VISIBLE);
-            tv_stamp6.setVisibility(View.VISIBLE);
-            tv_stamp7.setVisibility(View.VISIBLE);
-            tv_stamp8.setVisibility(View.VISIBLE);
+            tv_stamp1.setVisibility(View.GONE);
+            tv_stamp2.setVisibility(View.GONE);
+            tv_stamp3.setVisibility(View.GONE);
+            tv_stamp4.setVisibility(View.GONE);
+            tv_stamp5.setVisibility(View.GONE);
+            tv_stamp6.setVisibility(View.GONE);
+            tv_stamp7.setVisibility(View.GONE);
+            tv_stamp8.setVisibility(View.GONE);
 
-            tv_stamp1_ck.setVisibility(View.GONE);
-            tv_stamp2_ck.setVisibility(View.GONE);
-            tv_stamp3_ck.setVisibility(View.GONE);
-            tv_stamp4_ck.setVisibility(View.GONE);
-            tv_stamp5_ck.setVisibility(View.GONE);
-            tv_stamp6_ck.setVisibility(View.GONE);
-            tv_stamp7_ck.setVisibility(View.GONE);
-            tv_stamp8_ck.setVisibility(View.GONE);
+            tv_stamp1_ck.setVisibility(View.VISIBLE);
+            tv_stamp2_ck.setVisibility(View.VISIBLE);
+            tv_stamp3_ck.setVisibility(View.VISIBLE);
+            tv_stamp4_ck.setVisibility(View.VISIBLE);
+            tv_stamp5_ck.setVisibility(View.VISIBLE);
+            tv_stamp6_ck.setVisibility(View.VISIBLE);
+            tv_stamp7_ck.setVisibility(View.VISIBLE);
+            tv_stamp8_ck.setVisibility(View.VISIBLE);
+//            tv_stamp1.setVisibility(View.VISIBLE);
+//            tv_stamp2.setVisibility(View.VISIBLE);
+//            tv_stamp3.setVisibility(View.VISIBLE);
+//            tv_stamp4.setVisibility(View.VISIBLE);
+//            tv_stamp5.setVisibility(View.VISIBLE);
+//            tv_stamp6.setVisibility(View.VISIBLE);
+//            tv_stamp7.setVisibility(View.VISIBLE);
+//            tv_stamp8.setVisibility(View.VISIBLE);
+//
+//            tv_stamp1_ck.setVisibility(View.GONE);
+//            tv_stamp2_ck.setVisibility(View.GONE);
+//            tv_stamp3_ck.setVisibility(View.GONE);
+//            tv_stamp4_ck.setVisibility(View.GONE);
+//            tv_stamp5_ck.setVisibility(View.GONE);
+//            tv_stamp6_ck.setVisibility(View.GONE);
+//            tv_stamp7_ck.setVisibility(View.GONE);
+//            tv_stamp8_ck.setVisibility(View.GONE);
 
         } else if(stampNumber == 1) {
 
