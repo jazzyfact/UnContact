@@ -53,7 +53,7 @@
         android:textColor="#000"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="룸" />
+        android:text="객실" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/stay_detail_recylcerview"

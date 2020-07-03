@@ -170,7 +170,8 @@ public class StayActivity extends AppCompatActivity implements View.OnClickListe
         intentDo.putExtra("image", item.getStayImage());
         intentDo.putExtra("title", item.getStayTitle());
         intentDo.putExtra("intro", item.getStayIntro());
-        intentDo.putExtra("star",item.getStayStar());
+        intentDo.putExtra("star", item.getStayStar());
+
         Log.i(TAG,"star~~~~~" + item.getStayStar());
         startActivity(intentDo);
         //애니메이션제거

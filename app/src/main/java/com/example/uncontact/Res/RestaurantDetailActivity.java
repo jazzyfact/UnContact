@@ -159,7 +159,7 @@ public class RestaurantDetailActivity extends AppCompatActivity implements Resta
 
         Toast myToast = Toast.makeText(getApplicationContext(), "결제페이지로 이동합니다", Toast.LENGTH_SHORT);
         myToast.show();
-        Intent intentDo = new Intent(RestaurantDetailActivity.this, ResCartActivity.class);
+        Intent intentDo = new Intent(RestaurantDetailActivity.this, ResSelectMenuActivity.class);
 
         resMenuItem = resMenuItemArrayList.get(position);
 
