@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
     ImageView iv_stamImage;
     TextView tv_stampNumber;
     ImageView bt_alarm;
-    static int stampNumber = 0;
+    static int stampNumber = 6;
     TextView tv_stampTitle;
     TextView tv_mainUsepay;
     static int mainUsepay = 20000;
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
                         // Log and toast
                         String msg = getString(R.string.msg_token_fmt, token);
                         Log.d(TAG, msg);
-                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
 

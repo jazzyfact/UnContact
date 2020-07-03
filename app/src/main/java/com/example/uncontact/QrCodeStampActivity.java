@@ -2,6 +2,8 @@ package com.example.uncontact;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,7 +47,7 @@ public class QrCodeStampActivity extends AppCompatActivity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
                 // todo
             } else {
-                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
                 Log.i("확", "스캔한거값: " + result.getContents());
                 String qrCodeGet =  result.getContents();
 
@@ -59,6 +61,7 @@ public class QrCodeStampActivity extends AppCompatActivity {
                 } else if (MainActivity.stampNumber == 7) {
                     MainActivity.stampNumber = 0;
                     mainUsepay= mainUsepay+5000;
+
                 }
 
 //                bottom_sheet bottomSheet = new bottom_sheet();
@@ -73,6 +76,7 @@ public class QrCodeStampActivity extends AppCompatActivity {
 
 
     }
+
 
 
 }

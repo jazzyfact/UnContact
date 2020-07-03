@@ -8,6 +8,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.uncontact.GoodsBuy.GoodsBuyCartActivity;
+import com.example.uncontact.GoodsBuy.GoodsBuyDetailActivity;
 import com.example.uncontact.Res.RestaurantDetailActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -47,11 +48,11 @@ public class BarCodeActivity extends AppCompatActivity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
                 // todo
             } else {
-                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
 
                 String qrCodeGet =  result.getContents();
 
-                Intent intent = new Intent(BarCodeActivity.this, GoodsBuyCartActivity.class);
+                Intent intent = new Intent(BarCodeActivity.this, GoodsBuyDetailActivity.class);
                 intent.putExtra("qrcode",qrCodeGet);
                 startActivity(intent);
 
