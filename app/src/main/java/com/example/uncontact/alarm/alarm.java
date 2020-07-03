@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -92,6 +94,22 @@ public class alarm extends AppCompatActivity {
 
 
         // 메인 리사이클러뷰 시작 -----------------------------------------------------------------------
+
+        // 노티피케이션 관련 ---------------------------------------------------------------------------
+        String text = "전달 받은 값은";
+        int id = 0;
+
+        Bundle extras = getIntent().getExtras();
+        if (extras == null) {
+            text = "값을 전달 받는데 문제 발생";
+        }
+        else
+            id = extras.getInt("notificationId");
+
+        NotificationManager notificationManager =  (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        //노티피케이션 제거
+        notificationManager.cancel(id);
 
 
     }

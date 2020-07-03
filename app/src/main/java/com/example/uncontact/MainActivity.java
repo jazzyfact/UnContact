@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
     ImageView bt_alarm;
     static int stampNumber = 0;
     TextView tv_stampTitle;
+    TextView tv_mainUsepay;
+    static int mainUsepay = 20000;
 
     Intent intent;
     String TAG = "MainActivity";
@@ -241,6 +243,8 @@ public class MainActivity extends AppCompatActivity implements bottom_sheet.Bott
             }
         });
         tv_stampNumber.setText(String.valueOf(stampNumber));
+        tv_mainUsepay = findViewById(R.id.tv_mainUsepay);
+        tv_mainUsepay.setText(String.valueOf(mainUsepay));
 
         tv_stampTitle = findViewById(R.id.tv_stampTitle);
         tv_stampTitle.setOnClickListener(new View.OnClickListener() {

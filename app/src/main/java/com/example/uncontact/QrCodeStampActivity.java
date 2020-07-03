@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import static com.example.uncontact.MainActivity.mainUsepay;
+
 public class QrCodeStampActivity extends AppCompatActivity {
     private IntentIntegrator qrScan;
 
@@ -44,7 +46,7 @@ public class QrCodeStampActivity extends AppCompatActivity {
                 // todo
             } else {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-
+                Log.i("확", "스캔한거값: " + result.getContents());
                 String qrCodeGet =  result.getContents();
 
                 Intent intent = new Intent(QrCodeStampActivity.this, stamp.class);
@@ -52,10 +54,11 @@ public class QrCodeStampActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 MainActivity.qrcode = "스탬프";
-                if(MainActivity.stampNumber < 8){
+                if(MainActivity.stampNumber < 7){
                     MainActivity.stampNumber++;
-                } else if (MainActivity.stampNumber == 8) {
+                } else if (MainActivity.stampNumber == 7) {
                     MainActivity.stampNumber = 0;
+                    mainUsepay= mainUsepay+5000;
                 }
 
 //                bottom_sheet bottomSheet = new bottom_sheet();
