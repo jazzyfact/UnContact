@@ -1,6 +1,6 @@
 # 👏여행가유(Android)
 
-<img src="https://user-images.githubusercontent.com/51365114/119624857-8ac2ae00-be44-11eb-8431-62033ba55a62.png"   width="400" height="400"/>
+<img src="https://user-images.githubusercontent.com/51365114/119624857-8ac2ae00-be44-11eb-8431-62033ba55a62.png"   width="400" height="500"/>
 
 
 - '2020 빅데이터 분석 및 아이디어 공모전'에 아이디어분야로 보고서를 제출 후 1,2차 통과후 3차 발표평가에 뽑혀 프로토타입으로 개발 했던 어플리케이션입니다.
