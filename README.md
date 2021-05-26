@@ -1,6 +1,7 @@
 # 👏여행가유(Android)
 
----
+![image](https://user-images.githubusercontent.com/51365114/119624857-8ac2ae00-be44-11eb-8431-62033ba55a62.png)
+
 
 - '2020 빅데이터 분석 및 아이디어 공모전'에 아이디어분야로 보고서를 제출 후 1,2차 통과후 3차 발표평가에 뽑혀 프로토타입으로 개발 했던 어플리케이션입니다.
 - 대전 여행에 필요한 모든 서비스를 비대면으로 결제하고 제공 받을 수 있는 앱입니다.
@@ -14,7 +15,7 @@
 
 - **70%, 3인 프로젝트(발표 담당1명, 안드로이드 2명)**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a1df9340-1d61-4dcd-8c6b-e5e4df6e02b1/2020.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a1df9340-1d61-4dcd-8c6b-e5e4df6e02b1/2020.jpg)
+
 
 **Github** : [https://github.com/jazzyfact/UnContact](https://github.com/jazzyfact/UnContact)
 
@@ -69,17 +70,18 @@
     2. 코로나 확산으로 심각한 타격을 받은 관광산업에 대안을 제시할 수 있다.
     3. '여행가유'라는 어플리케이션을 통해 다양한 종류의 데이터들을 생산하고, 활용한다면 대전광역시에서 추진하고 있는 빅데이터 기반 구축 사업에도 도움이 될 수 있다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d61e2f36-48fc-4bc9-8339-0a7e807891d2/.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d61e2f36-48fc-4bc9-8339-0a7e807891d2/.png)
+![image](https://user-images.githubusercontent.com/51365114/119624927-9ada8d80-be44-11eb-80d1-498a89248392.png)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/df601bd0-116c-4770-8d21-dc4ecbdd5624/.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/df601bd0-116c-4770-8d21-dc4ecbdd5624/.png)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/72ceb679-b9c9-434f-a5bd-1d3e057b3650/.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/72ceb679-b9c9-434f-a5bd-1d3e057b3650/.png)
+![image](https://user-images.githubusercontent.com/51365114/119624941-9f9f4180-be44-11eb-87b1-fd9baaffd06c.png)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/be29c1b5-3326-4023-862d-40fb4103b20c/.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/be29c1b5-3326-4023-862d-40fb4103b20c/.png)
+![image](https://user-images.githubusercontent.com/51365114/119624956-a463f580-be44-11eb-9975-be7eab7c26bc.png)
+
+![image](https://user-images.githubusercontent.com/51365114/119624971-a8901300-be44-11eb-83b0-0950e83443e8.png)
 
 ## 🛠️사용기술
 
----
+
 
 - android(JAVA)
 - zxing
@@ -89,7 +91,7 @@
 
 ## 💡프로젝트 회고
 
----
+
 
 - **체계적인 프로세스의 중요성**
     - 아이디어를 기획하기 위해 우선 대전광역시에 대한 정보부터 수집해야 했습니다. 대전광역시에 관련된 정보들을 찾고, 분류하려 하였지만 그 자료가 너무 많아 정보를 확인하는데에만 굉장히 많은 시간이 걸렸습니다. 따라서,  팀원들과 회의를 통해 데이터를 볼 때 3가지 규칙을 정했습니다.
