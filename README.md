@@ -17,10 +17,11 @@
 - **70%, 3인 프로젝트(발표 담당1명, 안드로이드 2명)**
 
 
+<br/><br/>
 
 ## 시연영상
 
-**Video** : [https://www.youtube.com/watch?v=AWYBkP480LQ&t=29s](https://www.youtube.com/watch?v=AWYBkP480LQ&t=29s)
+
 
 [![Video Label](http://img.youtube.com/vi/AWYBkP480LQ/0.jpg)](https://www.youtube.com/AWYBkP480LQ)
 
