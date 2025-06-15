@@ -23,7 +23,7 @@
 
 
 
-[![Video Label](http://img.youtube.com/vi/AWYBkP480LQ/0.jpg)](https://www.youtube.com/AWYBkP480LQ)
+[![Video Label][(http://img.youtube.com/vi/AWYBkP480LQ/0.jpg)](https://www.youtube.com/AWYBkP480LQ)](https://www.youtube.com/watch?v=AWYBkP480LQ)
 
 <br/><br/>
 ## ✏️담당업무
